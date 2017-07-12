@@ -20,6 +20,7 @@ class LessonTransformer extends TransformerAbstract
             'content' => $lesson['body'],
             'is_free' =>(boolean) $lesson['free'],
         ];
+
     }
 
 }

@@ -20,13 +20,15 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
         $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');
+        $api->post('token', 'UserTokenController@index');
                $api->post('user/login','AuthController@authenticate');
                $api->post('user/register','AuthController@register');
 
                            $api->group(['middleware' => 'jwt.auth'], function ($api) {
                                $api->get('user/me', 'AuthController@getAuthenticatedUser');
                                $api->get('lessons', 'LessonsController@index');
-                    ;
+                               $api->post('lessons', 'LessonsController@index');
+
                                $api->get('/user', function () {
                                    echo \Illuminate\Support\Facades\Auth::user();
                                });

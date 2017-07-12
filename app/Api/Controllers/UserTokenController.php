@@ -25,29 +25,8 @@ class UserTokenController extends BaseController
         $code = $request->only('code');
 
         $ut  = new UserTokenServer($code);
-        $info = json_decode($ut->getWxinfo(),true);
-
-/*        if (array_key_exists('errcode',$info)) {
-            return '微信访问错误';
-        }*/
-      //  $id = ['openid'=>$info['openid']];
-        $openid = ['id'=>123];
-        $user = Openid::where('openid','123')->get();
-        dd($user);
-        try {
-            // attempt to verify the credentials and create a token for the user
-            // dd(JWTAuth::attempt($credentials));
-            if ($user) {
-
-            }
-            $token = JWTAuth::fromUser($user);
-        } catch (JWTException $e) {
-            // something went wrong whilst attempting to encode the token
-            return response()->json(['error' => 'could_not_create_token'], 500);
-        }
-
-        // all good so return the token
-        return response()->json(compact('token'));
+        $token = $ut->getToken();
+        return $token;
      }
 
     

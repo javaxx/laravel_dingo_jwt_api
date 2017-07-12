@@ -8,6 +8,10 @@ namespace App\Api\Server;
  * Time: 18:25
  */
 use App\common;
+use App\Openid;
+use App\User;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use JWTAuth;
 
 class UserTokenServer
 {
@@ -26,20 +30,72 @@ class UserTokenServer
         $this->wxLoginUrl = sprintf(
             env('wxLoginUrl'),
             $this->wxAppID, $this->wxAppSecret, $this->code);
-//        $this->wxLoginUrl = 'https://api.weixin.qq.com/sns/jscode2session?appid=' . $this->wxAppID . '&secret=' . $this->wxAppSecret . '&js_code='.'.$code';
-       // $a = "https://api.weixin.qq.com/sns/jscode2session?appid=$this->wxAppID &secret= $this->wxAppSecret";// &js_code=$this->code&grant_type=authorization_code";
-       // $this->wxLoginUrl = $a." &js_code=$this->code&grant_type=authorization_code";
 
     }
 
-    public function getWxinfo()
+    public function getToken()
+    {
+        $result =common::curl_get($this->wxLoginUrl);
+        /*
+          $wxResult = json_decode($result, true);
+        if (empty($wxResult))
+         */
+        $wxResult = json_decode($result, true);
+        if (empty($wxResult)) {
+            return '获取session_key及openID时异常，微信内部错误';
+        }else{
+            if (array_key_exists('errcode',$wxResult)) {
+                return response()->json(['error' =>$wxResult['errcode'] , 500]);
+            } else {
+
+                return $this->grantToken($wxResult);
+            }
+        }
+    }
+
+    private function grantToken($wxResult)
     {
 
-        //dd($this);
-        $s =common::curl_get($this->wxLoginUrl);
 
+       // $id = ['openid'=>$wxResult['openid']];
+        $openid = $wxResult['openid'];
+       // $OpenId = new Openid;
+        //检验openid 是否存在, 是获取user,生成token 否就存入OpenID
 
-        return $s;
+        $user = User::where('openid',$openid)->first();
+
+        if($user){
+
+        }else{
+            //增加 openid 微信用户
+
+            $params = [
+                'openid' => $openid,
+                'name' => 'demo',
+                'email' => 'demo@demo.demo',
+                'password' =>bcrypt('demo'),
+                'remember_token' => 'remember_token',
+            ];
+
+            $user = User::create($params);
+        }
+       // dd($user);
+        try {
+            // attempt to verify the credentials and create a token for the user
+            // dd(JWTAuth::attempt($credentials));
+            if (!$user) {
+                return '获取wx用户失败';
+            }
+            $token = JWTAuth::fromUser($user);
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()->json(['error' => 'could_not_create_token'], 500);
+        }
+
+        // all good so return the token
+        return response()->json(compact('token'));
+
+      //  return $s;
 
     }
 
