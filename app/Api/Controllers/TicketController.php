@@ -54,12 +54,7 @@ class TicketController
                     'message' => '已超5个订单没有支付,请处理'
                 ], 404);
             }
-
-
-
         }
-
-
     }
 
     public function getPrice()

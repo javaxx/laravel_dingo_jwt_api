@@ -40,7 +40,7 @@ $api->version('v1', function ($api) {
                                $api->get('/user', function () {
                                    echo \Illuminate\Support\Facades\Auth::user();
                                });
-                               $api->post('addpayer', 'ParyerController@addpyer');
+                               $api->post('addPayer', 'ParyerController@addpyer');
                                $api->post('getno', 'TicketController@getNo');
                            });
 
