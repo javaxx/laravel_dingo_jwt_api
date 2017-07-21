@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Hamcrest\Type\IsObject;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 

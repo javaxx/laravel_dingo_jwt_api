@@ -10,6 +10,7 @@ namespace App\Api\Server;
 use App\common;
 use App\Openid;
 use App\User;
+use Illuminate\Support\Facades\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
 
@@ -36,6 +37,9 @@ class UserTokenServer
     public function getToken()
     {
         $result =common::curl_get($this->wxLoginUrl);
+       // $request = Request::create($this->wxLoginUrl, 'GET');
+        //dd($request->appid);
+
         /*
           $wxResult = json_decode($result, true);
         if (empty($wxResult))

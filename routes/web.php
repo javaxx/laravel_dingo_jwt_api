@@ -13,11 +13,22 @@ use  Tymon\JWTAuth\Providers;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo date('Ymd', time());
+//    return view('welcome');
 });
+
+Route::get('/wechat','WeChatController@index');
+Route::post('/wechat','WeChatController@index');
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
+        $api->group(['middleware' => 'wechat.oauth'], function ($api) {
+        Route::get('/wechat','WeChatController@index');
+
+        });
+
+        $api->get('payers', 'ParyerController@payerList');
+        $api->get('addTicket', 'TicketController@addTicket');
         $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');
         $api->post('token', 'UserTokenController@index');
@@ -28,10 +39,11 @@ $api->version('v1', function ($api) {
                                $api->get('user/me', 'AuthController@getAuthenticatedUser');
                                $api->get('lessons', 'LessonsController@index');
                                $api->post('lessons', 'LessonsController@index');
-
                                $api->get('/user', function () {
                                    echo \Illuminate\Support\Facades\Auth::user();
                                });
+                               $api->post('addpayer', 'ParyerController@addpyer');
+                               $api->post('getno', 'TicketController@getNo');
                            });
 
     });
