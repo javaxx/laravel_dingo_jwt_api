@@ -37,22 +37,21 @@ class ParyerController extends BaseController
 //        if (!$validator->passes()) {
 //            return $validator->errors();
 //        }
-
-
         $postData = request(['name','idCard']);
-
         $user = $this->getAuthenticatedUser();
-
         $payer=Payer::where(['user_id'=>$user->id,'idCard'=>request('idCard')])->first();
         if ($payer) {
-            return '此用户已经存在,不需要重复添加';
+            return response()->json([
+                'status' => false,
+                'message' => '此用户已经存在,不需要重复添加'
+            ], 404);
         }
         $payer = new Payer();
-
-
         $payer->create(array_merge($postData,['user_id'=>$user->id]));
-        return '增加成功';
-
+        return response()->json([
+            'status' => false,
+            'message' => '增加成功,去购票'
+        ], 404);
     }
     public function getAuthenticatedUser()
     {

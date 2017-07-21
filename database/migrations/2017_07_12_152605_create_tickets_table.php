@@ -21,6 +21,7 @@ class CreateTicketsTable extends Migration
             $table->string('check_id');
             $table->string('payer_id');
             $table->boolean('status');
+            $table->decimal('money');
             $table->timestamps();
         });
     }
