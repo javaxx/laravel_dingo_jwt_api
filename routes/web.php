@@ -22,13 +22,11 @@ Route::post('/wechat','WeChatController@index');
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
-        $api->group(['middleware' => 'wechat.oauth'], function ($api) {
-        Route::get('/wechat','WeChatController@index');
 
-        });
 
         $api->get('payers', 'ParyerController@payerList');
         $api->get('addTicket', 'TicketController@addTicket');
+        $api->get('getPrice', 'TicketController@getPrice');
         $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');
         $api->post('token', 'UserTokenController@index');

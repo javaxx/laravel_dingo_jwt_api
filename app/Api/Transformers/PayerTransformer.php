@@ -17,6 +17,7 @@ class PayerTransformer extends TransformerAbstract
     public function transform(Payer $payer)
     {
         return [
+            'id' => $payer['id'],
             'name' => $payer['name'],
             'idCard' => $payer['idCard'],
             'user_id' => $payer['user_id'],

@@ -16,17 +16,24 @@ class WeChatController extends Controller
 
     public function index(Request $request)
     {
-        $wxOrderData  = new WxPayUnifiedOrder();
-        $wxOrderData->SetOut_trade_no('123');
-        $wxOrderData->SetTrade_type("JSAPI");
-        /*        $wxOrderData->SetTotal_fee((string)$totalfee);*/
-        $wxOrderData->SetTotal_fee(1);
-        $wxOrderData->SetBody('NumberSi_body');
-        $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
-        $wxOrderData->SetNotify_url('http://www.baidu.com');
-        $wxOrder =WxPayApi::unifiedOrder($wxOrderData);
-        $signature = $this->sign($wxOrder);
-        return $signature;
+        $no = $request->no;
+        if ($no){
+
+            $wxOrderData  = new WxPayUnifiedOrder();
+            $wxOrderData->SetOut_trade_no($no);
+            $wxOrderData->SetTrade_type("JSAPI");
+            /*        $wxOrderData->SetTotal_fee((string)$totalfee);*/
+            $wxOrderData->SetTotal_fee(1);
+            $wxOrderData->SetBody('NumberSi_body');
+            $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
+            $wxOrderData->SetNotify_url('http://www.baidu.com');
+            $wxOrder =WxPayApi::unifiedOrder($wxOrderData);
+            $signature = $this->sign($wxOrder);
+            return $signature;
+        }
+
+
+
 //        dd($signature);
 //
 //        dd($wxOrder);
