@@ -24,7 +24,6 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
 
 
-        $api->get('payers', 'ParyerController@payerList');
         $api->get('addTicket', 'TicketController@addTicket');
         $api->get('getPrice', 'TicketController@getPrice');
         $api->get('lessons/{id}', 'LessonsController@show');
@@ -37,11 +36,9 @@ $api->version('v1', function ($api) {
                                $api->get('user/me', 'AuthController@getAuthenticatedUser');
                                $api->get('lessons', 'LessonsController@index');
                                $api->post('lessons', 'LessonsController@index');
-                               $api->get('/user', function () {
-                                   echo \Illuminate\Support\Facades\Auth::user();
-                               });
-                               $api->post('addPayer', 'ParyerController@addpyer');
+                               $api->post('addPayer', 'ParyerController@addPayer');
                                $api->post('getno', 'TicketController@getNo');
+                               $api->get('payers', 'ParyerController@payerList');
                            });
 
     });

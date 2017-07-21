@@ -39,9 +39,6 @@ class ParyerController extends BaseController
 //        }
 
 
-
-
-
         $postData = request(['name','idCard']);
 
         $user = $this->getAuthenticatedUser();
