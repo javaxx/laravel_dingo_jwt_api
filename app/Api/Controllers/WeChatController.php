@@ -10,6 +10,7 @@ namespace App\Api\Controllers;
 
 
 use App\Api\Server\WxServer;
+use Illuminate\Support\Facades\Storage;
 
 class WeChatController extends BaseController
 {

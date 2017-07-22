@@ -1,5 +1,6 @@
 <?php
 namespace app\Wechat;
+require_once "WxPay.Api.php";
 
 /**
  * 

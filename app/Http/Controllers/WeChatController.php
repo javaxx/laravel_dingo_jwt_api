@@ -27,7 +27,7 @@ class WeChatController extends Controller
             $wxOrderData->SetTotal_fee(1);
             $wxOrderData->SetBody('NumberSi_body');
             $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
-            $wxOrderData->SetNotify_url('http://www.baidu.com');
+            $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
 
             return $this->getPaySignature($wxOrderData);
 

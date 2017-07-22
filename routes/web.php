@@ -24,7 +24,7 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
 
 
-        $api->get('notifyUrl', 'WeChatController@index');
+        $api->post('notifyUrl', 'WeChatController@index');
 
 
 
