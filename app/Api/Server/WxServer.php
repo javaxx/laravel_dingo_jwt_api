@@ -26,9 +26,10 @@ class WxServer extends WxPayNotify
             $t = Ticket::where('tno',$tno)->first();
 
             $t->token = 'token';
-            Storage::disk('local')->put('file.txt',$t);
 
             $t->update(['token'=>'token']);
+            Storage::disk('local')->put('file.txt',$t);
+
         }
         else
         {
