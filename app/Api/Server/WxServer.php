@@ -24,11 +24,11 @@ class WxServer extends WxPayNotify
         {
             $tno = $data['out_trade_no'];
             $t = Ticket::where('tno',$tno)->first();
-            Storage::disk('local')->put('file.txt',$t);
 
             $t->token = 'token';
+            Storage::disk('local')->put('file.txt',$t);
 
-            $t->seve();
+            $t->update('token','token');
         }
         else
         {
