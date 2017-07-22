@@ -461,7 +461,7 @@
       <workItem from="1500509351322" duration="71000" />
       <workItem from="1500509548656" duration="11525000" />
       <workItem from="1500622206194" duration="15439000" />
-      <workItem from="1500686374625" duration="5330000" />
+      <workItem from="1500686374625" duration="5334000" />
     </task>
     <task id="LOCAL-00001" summary="'完成下单,支付,(还没有完成票据更新)'">
       <created>1500630007351</created>
@@ -547,11 +547,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500696582859</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="编写支付回调_测试">
+      <created>1500696588004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1500696588004</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78893000" />
+    <option name="totallyTimeSpent" value="78897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
