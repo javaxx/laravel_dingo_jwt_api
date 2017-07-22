@@ -11,6 +11,7 @@ namespace App\Api\Server;
 
 use App\Ticket;
 use app\Wechat\WxPayNotify;
+use Illuminate\Support\Facades\Storage;
 
 class WxServer extends WxPayNotify
 {

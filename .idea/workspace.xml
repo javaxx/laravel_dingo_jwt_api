@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="增加 ticket tno">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/laravel_dingo_jwt_api.iml" afterPath="$PROJECT_DIR$/.idea/laravel_dingo_jwt_api.iml" />
+    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChatController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChatController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Server/WxServer.php" afterPath="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WeChatController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WeChatController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="74" column="47" lean-forward="true" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+            <state relative-caret-position="317">
+              <caret line="29" column="65" lean-forward="false" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="78" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
@@ -40,31 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <file leaf-file-name="queue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/queue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParyerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/ParyerController.php">
+      <file leaf-file-name="jwt.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/jwt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="32" column="67" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="247">
+              <caret line="23" column="67" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -73,50 +58,10 @@
       <file leaf-file-name="WeChatController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/WeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTokenController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PayServer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Server/PayServer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WxServer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Server/WxServer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="247">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="24" />
               <folding>
-                <element signature="e#113#128#0#PHP" expanded="true" />
+                <element signature="e#118#146#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,8 +70,60 @@
       <file leaf-file-name="WxPay.Notify.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Notify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="171">
+              <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/services.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/app/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WxPay.Api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4529">
+              <caret line="417" column="0" lean-forward="false" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WxServer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Api/Server/WxServer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+              <folding>
+                <element signature="e#113#128#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WxPay.Data.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Data.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1518">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -136,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>deb</find>
       <find>$exception</find>
       <find>make</find>
       <find>pass</find>
@@ -166,6 +162,7 @@
       <find>WxPayConfig::APPID</find>
       <find>WxPayConfig::MCHID</find>
       <find>WxPayConfig::KEY</find>
+      <find>dd</find>
     </findStrings>
     <replaceStrings>
       <replace>pays</replace>
@@ -206,22 +203,23 @@
         <option value="$PROJECT_DIR$/app/Wechat/WxPay.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Wechat/WxPayNotify.php" />
-        <option value="$PROJECT_DIR$/app/Wechat/WxPay.Notify.php" />
         <option value="$PROJECT_DIR$/app/Wechat/WxPay.Exception.php" />
         <option value="$PROJECT_DIR$/app/Api/Server/UserServer.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/PayerTransformer.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/app/Wechat/WxPay.Api.php" />
         <option value="$PROJECT_DIR$/app/Wechat/WxPay.Config.php" />
-        <option value="$PROJECT_DIR$/app/Wechat/WxPay.Data.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/ParyerController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_07_12_152605_create_tickets_table.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChatController.php" />
-        <option value="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
+        <option value="$PROJECT_DIR$/app/Wechat/WxPay.Notify.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Wechat/WxPay.Api.php" />
+        <option value="$PROJECT_DIR$/app/Wechat/WxPay.Data.php" />
+        <option value="$PROJECT_DIR$/storage/app/file.txt" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
       </list>
     </option>
   </component>
@@ -232,6 +230,12 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="127.0.0.1" id="3a50e035-0fac-47d5-9c67-e3f6bc85ec1e" name="127.0.0.1" port="8000" use_path_mappings="true" />
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -314,7 +318,26 @@
             <path>
               <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -329,6 +352,7 @@
     <property name="nodejs_interpreter_path" value="D:/Program Files/nodejs/node" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/app/Wechat/WxPay.Api.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -358,6 +382,7 @@
       <arguments />
       <envs />
     </configuration>
+    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="127.0.0.1" />
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
       <PhpTestRunnerSettings />
       <method />
@@ -437,7 +462,7 @@
       <workItem from="1500509351322" duration="71000" />
       <workItem from="1500509548656" duration="11525000" />
       <workItem from="1500622206194" duration="15439000" />
-      <workItem from="1500686374625" duration="1718000" />
+      <workItem from="1500686374625" duration="5323000" />
     </task>
     <task id="LOCAL-00001" summary="'完成下单,支付,(还没有完成票据更新)'">
       <created>1500630007351</created>
@@ -502,25 +527,40 @@
       <option name="project" value="LOCAL" />
       <updated>1500638571108</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="编写支付回调_测试">
+      <created>1500693000909</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1500693000910</updated>
+    </task>
+    <task id="LOCAL-00011" summary="编写支付回调_测试">
+      <created>1500696166523</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1500696166523</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75281000" />
+    <option name="totallyTimeSpent" value="78886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -570,47 +610,23 @@
     <MESSAGE value="增加 ticket money" />
     <MESSAGE value="token =null" />
     <MESSAGE value="增加 ticket tno" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 ticket tno" />
+    <MESSAGE value="编写支付回调_测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写支付回调_测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Wechat/WxPay.Api.php</url>
+          <line>416</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" />
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/LessonTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/overtrue/wechat/src/Payment/API.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/overtrue/wechat/src/Payment/Order.php" />
-    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPayException.php" />
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -632,6 +648,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -696,6 +713,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -706,42 +724,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="929">
-          <caret line="290" column="8" lean-forward="true" selection-start-line="290" selection-start-column="8" selection-end-line="290" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="120" column="23" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/LessonsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/console.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -765,14 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/jwt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="23" column="67" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -838,44 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Notify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="32" column="67" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Server/WxServer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <element signature="e#113#128#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/WeChatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -896,12 +841,152 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/channels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/jwt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="23" column="67" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4529">
+          <caret line="417" column="0" lean-forward="false" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/WeChatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="e#118#146#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="74" column="47" lean-forward="true" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+        <state relative-caret-position="317">
+          <caret line="29" column="65" lean-forward="false" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="78" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Wechat/WxPay.Notify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Server/WxServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <element signature="e#113#128#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
