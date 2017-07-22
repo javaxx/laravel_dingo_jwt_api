@@ -9,9 +9,16 @@
 namespace App\Api\Controllers;
 
 
+use App\Api\Server\WxServer;
+
 class WeChatController extends BaseController
 {
 public function index(){
+
+    $wxServer = new WxServer();
+
+    $wxServer->Handle();
+
 
 }
 }

@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Ticket;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
-use EasyWeChat\Payment\Business;
-use EasyWeChat\Payment\UnifiedOrder;
+
 use Illuminate\Http\Request;
 
 
 
 class WeChatController extends Controller
 {
-
+    public $id ='';
     public function index(Request $request)
     {
         $no = $request->no;
+        $this->id = $no;
         if ($no){
 
             $wxOrderData  = new WxPayUnifiedOrder();
@@ -27,20 +28,29 @@ class WeChatController extends Controller
             $wxOrderData->SetBody('NumberSi_body');
             $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
             $wxOrderData->SetNotify_url('http://www.baidu.com');
-            $wxOrder =WxPayApi::unifiedOrder($wxOrderData);
-            $signature = $this->sign($wxOrder);
-            return $signature;
+
+            return $this->getPaySignature($wxOrderData);
+
+
         }
-
-
-
-//        dd($signature);
-//
-//        dd($wxOrder);
-//        dd($wxOrderData);
-
     }
 
+    public function getPaySignature($wxOrderData)
+    {
+        $wxOrder =WxPayApi::unifiedOrder($wxOrderData);
+        if ($wxOrder['return_code'] != 'SUCCESS' ||
+            $wxOrder['result_code'] != 'SUCCESS'
+        )
+        {
+            Log::record($wxOrder, 'error');
+            Log::record('获取预支付订单失败', 'error');
+        }
+        //prepay_id
+        $this->recordPreOrder($wxOrder);
+        $signature = $this->sign($wxOrder);
+        return $signature;
+
+    }
 
     private function sign($wxOrder)
     {
@@ -59,6 +69,11 @@ class WeChatController extends Controller
 
         $rawData['paySign']= $sign;
         return $rawData;
+    }
+    private function recordPreOrder($wxOrder)
+    {
+        $t = Ticket::where('tno' ,$this->id)->get();
+
     }
 
 }
