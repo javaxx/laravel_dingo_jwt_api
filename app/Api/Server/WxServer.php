@@ -28,7 +28,7 @@ class WxServer extends WxPayNotify
             $t->token = 'token';
             Storage::disk('local')->put('file.txt',$t);
 
-            $t->update('token','token');
+            $t->update(['token'=>'token']);
         }
         else
         {
