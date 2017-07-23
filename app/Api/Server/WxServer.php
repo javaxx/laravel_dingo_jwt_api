@@ -12,6 +12,7 @@ namespace App\Api\Server;
 use App\Ticket;
 use app\Wechat\WxPayNotify;
 use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class WxServer extends WxPayNotify
 {
@@ -23,11 +24,11 @@ class WxServer extends WxPayNotify
         if ($data['result_code'] == 'SUCCESS')
         {
             $tno = $data['out_trade_no'];
+            $token = $this->getToken($tno);
             $t = Ticket::where('tno',$tno)->first();
-
-            $t->update(['token'=>$this->getToken($tno)]);
+            $t->update(['token'=>$token]);
+            $this->getQrCode($tno,$token);
             Storage::disk('local')->put('file.txt',$t);
-
         }
         else
         {
@@ -40,4 +41,15 @@ class WxServer extends WxPayNotify
     public function getToken($tno){
         return decrypt('NumberSi0102' . $tno);
     }
+
+    public function getQrCode($tno,$token)
+    {
+        // $path = public_path('qrcodes/' . $filesName . '.png');
+        $picturedata=  QrCode::format('png')->size(250)->generate($token);
+        // $this->getImage($path);
+        $disk = \Storage::disk('qiniu');
+        $disk->put($tno.'.png',$picturedata);
+
+    }
+
 }

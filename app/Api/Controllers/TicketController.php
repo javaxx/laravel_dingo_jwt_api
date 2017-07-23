@@ -99,4 +99,15 @@ class TicketController
         return $orderSn;
     }
 
+
+    public function getTicketList()
+    {
+        return Ticket::get();
+        return Ticket::get()->reject(function ($item, $key) {
+            if ($item->token != null) {
+                return $item;
+            }
+        });
+    }
+
 }

@@ -187,7 +187,10 @@ return [
         /*
          *
          */
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+
+
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
     ],
 
     /*

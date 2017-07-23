@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/wechat','WeChatController@index');
+Route::get('/qiuniu','WeChatController@qiuniu');
 Route::get('/getQrCode','WeChatController@getQrCode');
 Route::post('/wechat','WeChatController@index');
 $api = app('Dingo\Api\Routing\Router');
@@ -29,6 +30,7 @@ $api->version('v1', function ($api) {
 
 
         $api->get('addTicket', 'TicketController@addTicket');
+        $api->get('tickets', 'TicketController@getTicketList');
         $api->get('getPrice', 'TicketController@getPrice');
         $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');
