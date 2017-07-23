@@ -39,7 +39,7 @@ class WxServer extends WxPayNotify
     }
 
     public function getToken($tno){
-        return decrypt('NumberSi0102' . $tno);
+        return bcrypt('NumberSi0102' . $tno);
     }
 
     public function getQrCode($tno,$token)
