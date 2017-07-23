@@ -6,14 +6,18 @@ use App\Ticket;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
-
 use Illuminate\Http\Request;
-
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 
 class WeChatController extends Controller
 {
     public $id ='';
+
+    public function getQrCode(Request $request)
+    {
+      return  QrCode::size(250)->generate('ni hao');
+    }
     public function index(Request $request)
     {
         $no = $request->no;

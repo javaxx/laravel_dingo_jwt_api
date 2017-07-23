@@ -98,7 +98,5 @@ class TicketController
                 '%02d', rand(0, 99));
         return $orderSn;
     }
-    public function getToken(){
-        $this->getOrderNo();
-    }
+
 }

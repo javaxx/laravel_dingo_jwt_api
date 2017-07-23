@@ -13,11 +13,11 @@ use  Tymon\JWTAuth\Providers;
 */
 
 Route::get('/', function () {
-    echo date('Ymd', time());
-//    return view('welcome');
+   return view('welcome');
 });
 
 Route::get('/wechat','WeChatController@index');
+Route::get('/getQrCode','WeChatController@getQrCode');
 Route::post('/wechat','WeChatController@index');
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {

@@ -25,9 +25,7 @@ class WxServer extends WxPayNotify
             $tno = $data['out_trade_no'];
             $t = Ticket::where('tno',$tno)->first();
 
-            $t->token = 'token';
-
-            $t->update(['token'=>'token']);
+            $t->update(['token'=>$this->getToken($tno)]);
             Storage::disk('local')->put('file.txt',$t);
 
         }
@@ -37,5 +35,9 @@ class WxServer extends WxPayNotify
         }
 
 
+    }
+
+    public function getToken($tno){
+        return decrypt('NumberSi0102' . $tno);
     }
 }
