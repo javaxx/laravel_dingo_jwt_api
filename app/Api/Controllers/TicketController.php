@@ -30,11 +30,12 @@ class TicketController
             $user = UserServer::getUser();
             $user_id = $user->id;
 
-           $ts= Ticket::where(['user_id'=>$user_id,'token'=>null])->get();
+           $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
 
             if ($ts->count()<5) {
                 $payer_id = $payerID;
                 $params = [
+                    'token'=>'',
                     'tno' => $tno,
                     'user_id'=>$user_id,
                     'payer_id' => $payer_id,
