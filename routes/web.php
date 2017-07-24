@@ -30,7 +30,9 @@ $api->version('v1', function ($api) {
 
 
         $api->get('addTicket', 'TicketController@addTicket');
+
         $api->get('tickets', 'TicketController@getTicketList');
+
         $api->get('getPrice', 'TicketController@getPrice');
         $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');

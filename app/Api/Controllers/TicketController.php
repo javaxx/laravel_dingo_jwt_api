@@ -103,7 +103,11 @@ class TicketController
 
     public function getTicketList()
     {
-        return Ticket::get();
+        return Ticket::with('payers')->get()->reject(function ($item, $key) {
+            if ($item->token == null) {
+                return $item;
+            }
+        });
         return Ticket::get()->reject(function ($item, $key) {
             if ($item->token != null) {
                 return $item;
