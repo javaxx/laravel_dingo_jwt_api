@@ -13,6 +13,11 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class WeChatController extends Controller
 {
     public $id ='';
+
+    public function qiuniu()
+    {
+        QrCode::format('png')->size(200)->margin(1)->merge('/public/qrcodes/icon.png',.15)->generate('LaravelAcademy',public_path('qrcodes/qrcode.png'));
+    }
     public function index(Request $request)
     {
         $no = $request->no;

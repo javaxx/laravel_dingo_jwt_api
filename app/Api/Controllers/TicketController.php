@@ -103,7 +103,7 @@ class TicketController
 
     public function getTicketList()
     {
-        return Ticket::with('payers')-> orderBy('status', 'asc')->get()->reject(function ($item, $key) {
+        return Ticket::with('payers')-> orderBy('status', 'asc')->oldest ('updated_at')->get()->reject(function ($item, $key) {
             if ($item->token == null) {
                 return $item;
             }

@@ -49,9 +49,9 @@ class ParyerController extends BaseController
         $payer = new Payer();
         $payer->create(array_merge($postData,['user_id'=>$user->id]));
         return response()->json([
-            'status' => false,
+            'status' => true,
             'message' => '增加成功,去购票'
-        ], 404);
+        ], 200);
     }
     public function getAuthenticatedUser()
     {

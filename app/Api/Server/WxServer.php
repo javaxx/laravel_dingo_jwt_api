@@ -55,7 +55,7 @@ class WxServer extends WxPayNotify
     public function getQrCode($tno,$token)
     {
         // $path = public_path('qrcodes/' . $filesName . '.png');
-        $picturedata=  QrCode::format('png')->size(250)->generate($token);
+        $picturedata=  QrCode::format('png')->size(250)->margin(1)->merge('/public/qrcodes/icon.png',.15)->generate($token);
         // $this->getImage($path);
         $disk = \Storage::disk('qiniu');
         $disk->put($tno.'.png',$picturedata);
