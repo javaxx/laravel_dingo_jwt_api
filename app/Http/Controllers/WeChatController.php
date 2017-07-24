@@ -13,34 +13,6 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class WeChatController extends Controller
 {
     public $id ='';
-
-    public function getQrCode(Request $request)
-    {
-        $filesName = rand(1,111);
-       // $path = public_path('qrcodes/' . $filesName . '.png');
-        $picturedata=  QrCode::format('png')->size(250)->generate('ni hao');
-       // $this->getImage($path);
-        $disk = \Storage::disk('qiniu');
-        $disk->put($filesName.'.png',$picturedata);
-
-    }
-    public function qiuniu($picturedata)
-    {
-
-        $disk = \Storage::disk('qiniu');
-/*//        $disk->put('file.jpg',);
-        $a = $disk->exists('b.jpg');*/
-      $a =  $disk->put('file.jpg',$picturedata);
-        dd($a);
-
-    }
-    public function getImage($path)
-    {
-        header( "Content-type: image/png");
-        $PSize = filesize($path);
-        $picturedata = fread(fopen($path, "r"), $PSize);
-        $this->qiuniu($picturedata);
-    }
     public function index(Request $request)
     {
         $no = $request->no;
