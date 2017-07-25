@@ -62,33 +62,6 @@ class TicketController
     {
         return '150.00';
     }
-    public function addTicket()
-    {
-        $orderNo = $this->getOrderNo();
-
-        if ($orderNo) {
-
-            if (!request(['no'])) {
-                return $orderNo;
-            }
-            $orderNo = request(['no']);
-            $payer_id = '4';
-            $user = UserServer::getUser();
-            $user_id = $user->id;
-            $params = [
-                'tno' => $orderNo,
-                'user_id'=>$user_id,
-                'payer_id' => $payer_id,
-                'money' => 0,
-            ];
-            $t=Ticket::create($params);
-            if ($t) {
-
-            }
-        }
-
-
-    }
 
     public function getOrderNo()
     {

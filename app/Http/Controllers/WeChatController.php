@@ -16,7 +16,11 @@ class WeChatController extends Controller
 
     public function qiuniu()
     {
-        QrCode::format('png')->size(200)->margin(1)->merge('/public/qrcodes/icon.png',.15)->generate('LaravelAcademy',public_path('qrcodes/qrcode.png'));
+        $t = Ticket::where('tno' ,'A722947197904494')->first();
+        $t->token = '1111' ;
+
+        $t->save();
+
     }
     public function index(Request $request)
     {
@@ -29,7 +33,7 @@ class WeChatController extends Controller
             $wxOrderData->SetTrade_type("JSAPI");
             /*        $wxOrderData->SetTotal_fee((string)$totalfee);*/
             $wxOrderData->SetTotal_fee(1);
-            $wxOrderData->SetBody('NumberSi_body');
+            $wxOrderData->SetBody('商丘');
             $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
             $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
 
@@ -50,7 +54,6 @@ class WeChatController extends Controller
             Log::record('获取预支付订单失败', 'error');
         }
         //prepay_id
-        $this->recordPreOrder($wxOrder);
         $signature = $this->sign($wxOrder);
         return $signature;
 
@@ -70,14 +73,15 @@ class WeChatController extends Controller
         $jsApiPayData->SetSignType('md5');
         $sign = $jsApiPayData->MakeSign();
         $rawData = $jsApiPayData->GetValues();
-
+        $this->recordPreOrder($wxOrder['prepay_id']);
         $rawData['paySign']= $sign;
         return $rawData;
     }
-    private function recordPreOrder($wxOrder)
+    private function recordPreOrder($prepay_id)
     {
-        $t = Ticket::where('tno' ,$this->id)->get();
-
+        $t = Ticket::where('tno' ,$this->id)->frist();
+        $t->prepay_id = $prepay_id;
+        $t->save();
     }
 
 }
