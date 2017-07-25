@@ -79,7 +79,7 @@ class WeChatController extends Controller
     }
     private function recordPreOrder($prepay_id)
     {
-        $t = Ticket::where('tno' ,$this->id)->frist();
+        $t = Ticket::where('tno' ,$this->id)->first();
         $t->prepay_id = $prepay_id;
         $t->save();
     }
