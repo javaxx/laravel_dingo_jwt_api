@@ -37,9 +37,11 @@ class ParyerController extends BaseController
 //        if (!$validator->passes()) {
 //            return $validator->errors();
 //        }
+
         $postData = request(['name','idCard']);
         $user = $this->getAuthenticatedUser();
-        $payer=Payer::where(['user_id'=>$user->id,'idCard'=>request('idCard')])->first();
+       $prarms = array_add($postData, 'user_id', $user->id);
+        $payer=Payer::where($prarms)->first();
         if ($payer) {
             return response()->json([
                 'status' => false,
