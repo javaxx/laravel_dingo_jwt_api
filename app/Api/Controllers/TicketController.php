@@ -79,18 +79,7 @@ class TicketController
     {
         $id =\Illuminate\Support\Facades\Auth::id();
 
-        $a=  Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
+        return Ticket::where(['user_id'=> $id,'token'=>''])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get();
 
-            if ($item->token == null) {
-                return $item;
-            }
-        });
-        return $a;
-        return Ticket::get()->reject(function ($item, $key) {
-            if ($item->token != null) {
-                return $item;
-            }
-        });
-    }
 
 }
