@@ -14,6 +14,7 @@ use App\Payer;
 use App\Ticket;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
+use Qiniu\Auth;
 
 class TicketController
 {
@@ -76,7 +77,8 @@ class TicketController
 
     public function getTicketList()
     {
-        return Ticket::with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
+        $id =\Illuminate\Support\Facades\Auth::id();
+        return Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
             if ($item->token == null) {
                 return $item;
             }
