@@ -15,7 +15,8 @@ use App\Ticket;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+
 
 class WeChatController extends BaseController
 {
