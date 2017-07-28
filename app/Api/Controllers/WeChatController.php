@@ -9,13 +9,13 @@
 namespace App\Api\Controllers;
 
 
+use App\Api\Server\UserServer;
 use App\Api\Server\WxServer;
 use App\Ticket;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
-use Illuminate\Support\Facades\Storage;
-use Qiniu\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 class WeChatController extends BaseController
 {
@@ -30,6 +30,8 @@ class WeChatController extends BaseController
     }
     public function index(Request $request)
     {
+        $user= UserServer::getUser();
+       $Openid=$user->openid;
         $no = $request->no;
         $this->id = $no;
         if ($no){
@@ -40,7 +42,7 @@ class WeChatController extends BaseController
             /*        $wxOrderData->SetTotal_fee((string)$totalfee);*/
             $wxOrderData->SetTotal_fee(1);
             $wxOrderData->SetBody('商丘');
-            $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
+            $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
 
             return $this->getPaySignature($wxOrderData);
