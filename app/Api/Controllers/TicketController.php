@@ -83,6 +83,7 @@ class TicketController
 
             if ($item->token == '') {
                 return $item;
+
             }
         });
 
