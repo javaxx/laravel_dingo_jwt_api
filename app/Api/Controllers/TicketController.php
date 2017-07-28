@@ -31,21 +31,21 @@ class TicketController
             $user = UserServer::getUser();
             $user_id = $user->id;
 
-            $ts = Ticket::where(['user_id' => $user_id, 'token' => ''])->get();
+           $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
 
-            if ($ts->count() < 5) {
+            if ($ts->count()<5) {
                 $payer_id = $payerID;
                 $params = [
-                    'token' => '',
+                    'token'=>'',
                     'tno' => $tno,
-                    'user_id' => $user_id,
+                    'user_id'=>$user_id,
                     'payer_id' => $payer_id,
                     'money' => $this->getPrice(),
                 ];
-                $t = Ticket::create($params);
+                $t=Ticket::create($params);
                 if ($t) {
                     return response()->json([
-                        'no' => $tno,
+                        'no'=>$tno,
                         'message' => '下单成功,请支付',
                         'status' => true,
                     ], 222);
@@ -77,10 +77,16 @@ class TicketController
 
     public function getTicketList()
     {
-        $id = \Illuminate\Support\Facades\Auth::id();
+        $id =\Illuminate\Support\Facades\Auth::id();
 
-        return Ticket::where(['user_id' => $id, 'token' => ''])->with('payers')->orderBy('status', 'asc')->latest('updated_at')->get();
+        return Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
+
+            if ($item->token == '') {
+                return $item;
+            }
+        });
 
 
     }
+
 }
