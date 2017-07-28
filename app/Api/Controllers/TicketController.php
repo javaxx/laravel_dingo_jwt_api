@@ -78,6 +78,7 @@ class TicketController
     public function getTicketList()
     {
         $id =\Illuminate\Support\Facades\Auth::id();
+        dd($id);
         return Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
             if ($item->token == null) {
                 return $item;
