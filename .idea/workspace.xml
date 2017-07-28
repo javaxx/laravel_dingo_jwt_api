@@ -445,7 +445,7 @@
       <workItem from="1501065354685" duration="599000" />
       <workItem from="1501067143035" duration="6000" />
       <workItem from="1501210727664" duration="2463000" />
-      <workItem from="1501236928437" duration="3209000" />
+      <workItem from="1501236928437" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="'完成下单,支付,(还没有完成票据更新)'">
       <created>1500630007351</created>
@@ -776,11 +776,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501238608326</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="根据用户获取Ticket">
+      <created>1501240428827</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1501240428827</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120193000" />
+    <option name="totallyTimeSpent" value="120236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -853,7 +860,8 @@
     <MESSAGE value="ticket   updated_at排序" />
     <MESSAGE value="保存 prepay" />
     <MESSAGE value="增加payer 的检测" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加payer 的检测" />
+    <MESSAGE value="根据用户获取Ticket" />
+    <option name="LAST_COMMIT_MESSAGE" value="根据用户获取Ticket" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
