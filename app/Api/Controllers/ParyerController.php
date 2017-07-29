@@ -43,17 +43,17 @@ class ParyerController extends BaseController
        $prarms = array_add($postData, 'user_id', $user->id);
         $payer=Payer::where($prarms)->first();
         if ($payer) {
-            return response()->json([
+            return [
                 'status' => false,
                 'message' => '此用户已经存在,不需要重复添加'
-            ], 404);
+            ];
         }
         $payer = new Payer();
         $payer->create(array_merge($postData,['user_id'=>$user->id]));
-        return response()->json([
+        return [
             'status' => true,
             'message' => '增加成功,去购票'
-        ], 200);
+        ];
     }
     public function getAuthenticatedUser()
     {

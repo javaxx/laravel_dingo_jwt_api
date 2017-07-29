@@ -30,6 +30,8 @@ $api->version('v1', function ($api) {
                $api->post('user/login','AuthController@authenticate');
                $api->post('user/register','AuthController@register');
                 $api->group(['middleware' => 'jwt.auth'], function ($api) {
+                    $api->get('getNotPayTickets', 'TicketController@getNotPayTickets');
+
                     $api->post('/wechat','WeChatController@index');
                     $api->get('tickets', 'TicketController@getTicketList');
                     $api->post('/wechat','WeChatController@index');
