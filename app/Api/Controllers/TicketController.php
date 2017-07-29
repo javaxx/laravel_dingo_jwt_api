@@ -12,11 +12,12 @@ namespace App\Api\Controllers;
 use App\Api\Server\UserServer;
 use App\Payer;
 use App\Ticket;
+use App\User;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Qiniu\Auth;
 
-class TicketController
+class TicketController extends BaseController
 {
 
 
@@ -96,7 +97,7 @@ class TicketController
     public function getNotPayTickets()
     {
         $id =\Illuminate\Support\Facades\Auth::id();
-        return Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
+        $Ticket = Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
 
             if ($item->token != '') {
                 return $item;
@@ -109,4 +110,21 @@ class TicketController
         return ['status' => true, 'tickets' => $Ticket];
     }
 
+    public function delTicket(Request $request)
+    {
+
+
+
+        $id = $request->id;
+        if ($id) {
+            $result =Ticket::destroy($id);
+
+            if ($result>0) {
+                return ['status'=>true,'message'=>'删除成功'];
+            }
+            return ['status'=>false,'message'=>'删除失败'];
+        }
+        return ['status'=>false,'message'=>'此订单不存在,请刷新'];
+
+    }
 }

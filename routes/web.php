@@ -34,6 +34,7 @@ $api->version('v1', function ($api) {
 
                     $api->post('/wechat','WeChatController@index');
                     $api->get('tickets', 'TicketController@getTicketList');
+                    $api->POST('delTicket', 'TicketController@delTicket');
                     $api->post('/wechat','WeChatController@index');
                     $api->get('user/me', 'AuthController@getAuthenticatedUser');
                     $api->get('lessons', 'LessonsController@index');
