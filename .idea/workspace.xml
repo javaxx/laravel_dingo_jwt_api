@@ -110,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
-              <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -441,14 +441,7 @@
       <workItem from="1501297244293" duration="11143000" />
       <workItem from="1501381139655" duration="3657000" />
       <workItem from="1501464270174" duration="618000" />
-      <workItem from="1501560907283" duration="4934000" />
-    </task>
-    <task id="LOCAL-00011" summary="编写支付回调_测试">
-      <created>1500696166523</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1500696166523</updated>
+      <workItem from="1501560907283" duration="4958000" />
     </task>
     <task id="LOCAL-00012" summary="编写支付回调_测试">
       <created>1500696582859</created>
@@ -786,11 +779,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501576530802</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="关于Home">
+      <created>1501576774367</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1501576774367</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143752000" />
+    <option name="totallyTimeSpent" value="143776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1229,7 +1229,7 @@
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
