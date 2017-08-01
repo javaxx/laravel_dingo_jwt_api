@@ -109,8 +109,8 @@
       <file leaf-file-name="BannerController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+            <state relative-caret-position="471">
+              <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -441,21 +441,7 @@
       <workItem from="1501297244293" duration="11143000" />
       <workItem from="1501381139655" duration="3657000" />
       <workItem from="1501464270174" duration="618000" />
-      <workItem from="1501560907283" duration="3368000" />
-    </task>
-    <task id="LOCAL-00007" summary="token =null">
-      <created>1500638504304</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1500638504304</updated>
-    </task>
-    <task id="LOCAL-00008" summary="增加 ticket tno">
-      <created>1500638530549</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1500638530549</updated>
+      <workItem from="1501560907283" duration="4650000" />
     </task>
     <task id="LOCAL-00009" summary="增加 ticket tno">
       <created>1500638571108</created>
@@ -786,11 +772,25 @@
       <option name="project" value="LOCAL" />
       <updated>1501575160572</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="关于Home">
+      <created>1501575208215</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1501575208215</updated>
+    </task>
+    <task id="LOCAL-00057" summary="关于Home">
+      <created>1501576350395</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1501576350395</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142186000" />
+    <option name="totallyTimeSpent" value="143468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1228,8 +1228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        <state relative-caret-position="471">
+          <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
           <folding />
         </state>
       </provider>
