@@ -62,7 +62,7 @@ class TicketController extends BaseController
 
     public function getPrice()
     {
-        return '150.00';
+        return '0.01';
     }
 
     public function getOrderNo()
@@ -126,5 +126,15 @@ class TicketController extends BaseController
         }
         return ['status'=>false,'message'=>'此订单不存在,请刷新'];
 
+    }
+
+    public function checkTicket(Request $request)
+    {
+
+        $token  = $request->token;
+        if ($token) {
+            Ticket::where(['token'=>$token])->first();
+
+        }
     }
 }

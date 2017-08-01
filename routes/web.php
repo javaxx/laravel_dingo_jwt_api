@@ -26,6 +26,8 @@ $api->version('v1', function ($api) {
         $api->get('getPrice', 'TicketController@getPrice');
         $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');
+        $api->get('getBanner', 'BannerController@getBanner');
+        $api->get('getLocation', 'BannerController@getLocation');
         $api->post('token', 'UserTokenController@index');
                $api->post('user/login','AuthController@authenticate');
                $api->post('user/register','AuthController@register');
@@ -33,6 +35,7 @@ $api->version('v1', function ($api) {
                     $api->get('getNotPayTickets', 'TicketController@getNotPayTickets');
 
                     $api->post('/wechat','WeChatController@index');
+
                     $api->get('tickets', 'TicketController@getTicketList');
                     $api->POST('delTicket', 'TicketController@delTicket');
                     $api->post('/wechat','WeChatController@index');
@@ -42,7 +45,12 @@ $api->version('v1', function ($api) {
                     $api->post('addPayer', 'ParyerController@addPayer');
                     $api->post('getno', 'TicketController@getNo');
                     $api->get('payers', 'ParyerController@payerList');
+
+
+
+
                 });
+        $api->get('checkTicket','CheckController@checkTicket');
 
     });
 });

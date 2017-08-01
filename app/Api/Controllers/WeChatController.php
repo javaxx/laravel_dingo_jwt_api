@@ -36,13 +36,13 @@ class WeChatController extends BaseController
         $no = $request->no;
         $this->id = $no;
         if ($no){
-
+            $tc =new TicketController();
+            $price = $tc->getPrice();
             $wxOrderData  = new WxPayUnifiedOrder();
             $wxOrderData->SetOut_trade_no($no);
             $wxOrderData->SetTrade_type("JSAPI");
-            /*        $wxOrderData->SetTotal_fee((string)$totalfee);*/
-            $wxOrderData->SetTotal_fee(1);
-            $wxOrderData->SetBody('商丘');
+            $wxOrderData->SetTotal_fee($price*100);
+            $wxOrderData->SetBody('订购商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
 
