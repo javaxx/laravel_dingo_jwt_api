@@ -44,7 +44,7 @@ class BannerController extends BaseController
     public function getBanner()
     {
 
-        $url = 'http://127.0.0.1:8000/banner/';
+        $url = 'https://www.numbersi.cn/banner/';
         return
         [
             'banner'=>[
