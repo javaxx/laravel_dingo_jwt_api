@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,16 +32,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
               <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/CheckController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -86,14 +77,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthServiceProvider.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthServiceProvider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="31" column="11" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="31" selection-end-column="11" />
+            <state relative-caret-position="589">
+              <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding>
                 <element signature="e#33#57#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parseToken</find>
       <find>create</find>
       <find>create()</find>
       <find>AbstractAPI</find>
@@ -164,6 +164,7 @@
       <find>&quot;adminlte</find>
       <find>checkTicket</find>
       <find>timepicker</find>
+      <find>\</find>
     </findStrings>
     <replaceStrings>
       <replace>pays</replace>
@@ -234,12 +235,12 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/bootstrap/cache/routes.php" />
         <option value="$PROJECT_DIR$/app/Wechat/WxPay.Config.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/CheckController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -323,7 +324,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="D:/Program Files/nodejs/node" />
-    <property name="SearchEverywhereHistoryKey" value="we&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/web.php&#10;w&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/web.php&#10;web&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/web.php&#10;admin&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/admin.php&#10;User&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/app/Admin/Controllers/UserController.php&#10;/ad&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/resources/views/admin&#10;admin/&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/resources/views/admin&#10;/view&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/resources/views&#10;ad&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/admin.php&#10;a&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/auth.php&#10;aut&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/auth.php&#10;/config/c&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/cache.php&#10;app&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/app.php&#10;f&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/filesystems.php" />
+    <property name="SearchEverywhereHistoryKey" value="w&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/web.php&#10;we&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/web.php&#10;web&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/web.php&#10;admin&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/admin.php&#10;User&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/app/Admin/Controllers/UserController.php&#10;/ad&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/resources/views/admin&#10;admin/&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/resources/views/admin&#10;/view&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/resources/views&#10;ad&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/routes/admin.php&#10;a&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/auth.php&#10;aut&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/auth.php&#10;/config/c&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/cache.php&#10;app&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/app.php&#10;f&#9;FILE&#9;file://C:/Users/si/Desktop/Code/PHPCode/laravel/laravel_dingo_jwt_api/config/filesystems.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../numbersi_b" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
@@ -463,14 +464,7 @@
       <workItem from="1501915099434" duration="6632000" />
       <workItem from="1501950076090" duration="7584000" />
       <workItem from="1501983421265" duration="109000" />
-      <workItem from="1501983971186" duration="15458000" />
-    </task>
-    <task id="LOCAL-00015" summary="编写支付回调_测试">
-      <created>1500697104846</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1500697104846</updated>
+      <workItem from="1501983971186" duration="16011000" />
     </task>
     <task id="LOCAL-00016" summary="编写支付回调_测试">
       <created>1500703529726</created>
@@ -808,21 +802,29 @@
       <option name="project" value="LOCAL" />
       <updated>1502031992678</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="关于Home">
+      <created>1502032016186</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1502032016186</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195659000" />
+    <option name="totallyTimeSpent" value="196212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3379531" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32535365" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32535365" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1164,14 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="44" column="70" lean-forward="false" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1296,11 +1290,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="31" column="11" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="31" selection-end-column="11" />
+        <state relative-caret-position="589">
+          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding>
             <element signature="e#33#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
