@@ -55,9 +55,9 @@ $api->version('v1', function ($api) {
 
 
 Route::group(['prefix'=>'admin'], function () {
-    Route::get('/login','\App\Admin\Controllers\LoginController@index' )->name("login");
-    Route::post('/login','\App\Admin\Controllers\LoginController@login' );
-    Route::get('/logout','\App\Admin\Controllers\LoginController@logout' )->name('logout');
+    Route::get('/login','/App/Admin/Controllers/LoginController@index' )->name("login");
+    Route::post('/login','/App/Admin/Controllers/Controller@login' );
+    Route::get('/logout','/App/Admin/Controllers/LoginController@logout' )->name('logout');
 
 
     Route::group(['middleware'=>'auth:web'], function () {
