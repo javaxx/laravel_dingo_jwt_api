@@ -63,8 +63,6 @@ class AuthController extends BaseController
 
                 return response()->json(['user_not_found'], 404);
             }
-            dd($user);
-
         } catch (TokenExpiredException $e) {
 
             return response()->json(['token_expired'], $e->getStatusCode());

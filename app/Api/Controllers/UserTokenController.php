@@ -22,9 +22,8 @@ class UserTokenController extends BaseController
 
     public function index(Request $request)
     {
-        $code = $request->only('code');
-
-        $ut  = new UserTokenServer($code);
+        $data = $request->only(['code','name']);
+        $ut  = new UserTokenServer($data['code'],$data['name']);
         $token = $ut->getToken();
         return $token;
      }

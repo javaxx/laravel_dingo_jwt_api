@@ -9,6 +9,7 @@ namespace App\Api\Server;
  */
 use App\common;
 use App\Openid;
+use App\Payer;
 use App\User;
 use Illuminate\Support\Facades\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -20,14 +21,13 @@ class UserTokenServer
     protected $wxAppID ='' ;
     protected $wxAppSecret='' ;
     protected $wxLoginUrl='';
-
-    function __construct($code=9)
+    protected $name;
+    function __construct($code=9,$name='')
     {
-
-        $this->code = $code['code'];
+        $this->name = $name;
+        $this->code = $code;
         $this->wxAppID = env('wxAppID');
         $this->wxAppSecret =env('wxAppSecret');
-        $this->wxLoginUrl = $code;
         $this->wxLoginUrl = sprintf(
             env('wxLoginUrl'),
             $this->wxAppID, $this->wxAppSecret, $this->code);
@@ -36,6 +36,8 @@ class UserTokenServer
 
     public function getToken()
     {
+
+
         $result =common::curl_get($this->wxLoginUrl);
        // $request = Request::create($this->wxLoginUrl, 'GET');
         //dd($request->appid);
@@ -75,12 +77,11 @@ class UserTokenServer
 
             $params = [
                 'openid' => $openid,
-                'name' => 'demo',
+                'name' =>  $this->name,
                 'email' => 'demo@demo.demo',
                 'password' =>bcrypt('demo'),
                 'remember_token' => 'remember_token',
             ];
-
             $user = User::create($params);
         }
        // dd($user);

@@ -12,10 +12,8 @@ namespace App\Api\Controllers;
 use App\Api\Server\UserServer;
 use App\Payer;
 use App\Ticket;
-use App\User;
-use function GuzzleHttp\Promise\all;
+use Auth;
 use Illuminate\Http\Request;
-use Qiniu\Auth;
 
 class TicketController extends BaseController
 {
@@ -78,25 +76,25 @@ class TicketController extends BaseController
 
     public function getTicketList()
     {
-        $id =\Illuminate\Support\Facades\Auth::id();
-        $Ticket= Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
-
+       // $id =Auth::id();
+        $user = Auth::user();
+        $roles = $user->roles;
+        $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
             if ($item->token == '') {
                 return $item;
-
             }
         });
 
         if ($Ticket->isEmpty()) {
             return ['status' => false, 'tickets' => $Ticket];
         }
-        return ['status' => true, 'tickets' => $Ticket];
+        return ['status' => true, 'tickets' => $Ticket,'roles'=>$roles];
     }
 
 
     public function getNotPayTickets()
     {
-        $id =\Illuminate\Support\Facades\Auth::id();
+        $id =Auth::id();
         $Ticket = Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
 
             if ($item->token != '') {
@@ -128,13 +126,4 @@ class TicketController extends BaseController
 
     }
 
-    public function checkTicket(Request $request)
-    {
-
-        $token  = $request->token;
-        if ($token) {
-            Ticket::where(['token'=>$token])->first();
-
-        }
-    }
 }

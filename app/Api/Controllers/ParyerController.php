@@ -12,7 +12,10 @@ namespace App\Api\Controllers;
 use App\Api\Server\UserServer;
 use App\Api\Transformers\PayerTransformer;
 use App\Payer;
+use Dingo\Api\Exception\StoreResourceFailedException;
+use Illuminate\Support\Facades\DB;
 use JWTAuth;
+use Symfony\Component\Console\Helper\Table;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
@@ -20,36 +23,30 @@ use Validator;
 
 class ParyerController extends BaseController
 {
-
+    protected  $pay_id;
     public function addPayer()
     {
-//      //  dd('123');
-//        $rules = [
-//            'name' => 'required',
-//            'idCard' => 'required|unique:payers,idCard',
-//        ];
-//        $payload = app('request')->only('name', 'idCard');
-//        $messages = [
-//            'idCard.unique' =>'身份证号已经存在,请重新输入'];
-//        $validator =   Validator::make($payload, $rules,$messages);
-//
-////
-//        if (!$validator->passes()) {
-//            return $validator->errors();
-//        }
-
         $postData = request(['name','idCard']);
         $user = $this->getAuthenticatedUser();
-       $prarms = array_add($postData, 'user_id', $user->id);
-        $payer=Payer::where($prarms)->first();
+        $payer=Payer::where($postData)->first();
+
         if ($payer) {
-            return [
+            if ($user->payers()->get()->contains($payer)) {
+                            return [
                 'status' => false,
                 'message' => '此用户已经存在,不需要重复添加'
             ];
+            }else{
+                $user->payers()->attach($payer);
+                return [
+                    'status' => true,
+                    'message' => '增加成功,去购票'
+                ];
+            }
         }
         $payer = new Payer();
-        $payer->create(array_merge($postData,['user_id'=>$user->id]));
+        $payer = $payer->create($postData);
+        $user->payers()->attach($payer);
         return [
             'status' => true,
             'message' => '增加成功,去购票'
@@ -73,15 +70,10 @@ class ParyerController extends BaseController
 
     public function payerList(){
         $user = UserServer::getUser();
-        $user_id = $user->id;
-        $payer =  Payer::where('user_id','=',$user_id)->get();
-
+        $payer = $user->payers()->get();
         if (!$payer->isEmpty()) {
             return $this->collection($payer,new PayerTransformer());
         }
         return null;
     }
-
-
-
 }

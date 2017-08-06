@@ -20,6 +20,7 @@ class UserServer
     {
         try {
             if (! $user = JWTAuth::parseToken()->authenticate()) {
+
                 return response()->json(['user_not_found'], 404);
             }
         } catch (TokenExpiredException $e) {
@@ -29,6 +30,7 @@ class UserServer
         } catch (JWTException $e) {
             return response()->json(['token_absent'], $e->getStatusCode());
         }
+
         return $user;
     }
 

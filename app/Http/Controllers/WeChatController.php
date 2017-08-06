@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\AdminRole;
+use App\Payer;
 use App\Ticket;
+use App\User;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
@@ -15,10 +18,9 @@ class WeChatController extends Controller
 
     public function qiuniu()
     {
-        $t = Ticket::where('tno' ,'A722947197904494')->first();
-        $t->token = '1111' ;
 
-        $t->save();
+        return User::where(['id'=>9])->with('roles')->first();
+
 
     }
     public function index(Request $request)
@@ -30,12 +32,10 @@ class WeChatController extends Controller
             $wxOrderData  = new WxPayUnifiedOrder();
             $wxOrderData->SetOut_trade_no($no);
             $wxOrderData->SetTrade_type("JSAPI");
-            /*        $wxOrderData->SetTotal_fee((string)$totalfee);*/
             $wxOrderData->SetTotal_fee(1);
             $wxOrderData->SetBody('商丘');
             $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
             $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
-
             return $this->getPaySignature($wxOrderData);
 
 
