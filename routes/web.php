@@ -43,6 +43,7 @@ $api->version('v1', function ($api) {
                     $api->get('payers', 'ParyerController@payerList');
                     $api->post('checkTicket','CheckController@checkTicket');
                     $api->get('checked','CheckController@checkedTickets');
+                    $api->get('getChecked','CheckController@getChecked');
 
                 });
 

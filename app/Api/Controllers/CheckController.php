@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 class CheckController extends BaseController
 {
 
+
     public function getChecked()
     {
         return ['status' => true, 'tickets' => Auth::user()->checkedTickets];
@@ -30,9 +31,11 @@ class CheckController extends BaseController
              *
              * 2 更新 ticket 的status 和 check_id
              *
-             *
+             *   where(['token'=>$token])->
              */
-            $ticket = Ticket::where(['token'=>$token])->first();
+
+            $ticket = Ticket::where('token',$token)->first();
+
             if ($ticket) {
                 if (      $ticket->status ==1 ){
                     return ['status'=>false,
