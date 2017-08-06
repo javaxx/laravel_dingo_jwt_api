@@ -52,7 +52,7 @@ class UserController extends Controller
     public function storeRole(User $user)
     {
         $this->validate(\request(),[
-            'roles'=>'required|array'
+            'roles'=>'array'
         ]);
         $roles = AdminRole::findMany(\request('roles'));
         $myRoles = $user->roles;

@@ -13,6 +13,7 @@ use App\Api\Server\UserServer;
 use App\Api\Transformers\PayerTransformer;
 use App\Payer;
 use Dingo\Api\Exception\StoreResourceFailedException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use JWTAuth;
 use Symfony\Component\Console\Helper\Table;
@@ -45,7 +46,7 @@ class ParyerController extends BaseController
             }
         }
         $payer = new Payer();
-        $payer = $payer->create($postData);
+        $payer = $payer->create(array_add($postData,'user_id',Auth::id()));
         $user->payers()->attach($payer);
         return [
             'status' => true,
