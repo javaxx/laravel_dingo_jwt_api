@@ -12,10 +12,7 @@ namespace App\Api\Controllers;
 class BannerController extends BaseController
 {
 
-    public function getLocation()
-    {
 
-    }
 
     public function getBanner()
     {
@@ -50,7 +47,7 @@ class BannerController extends BaseController
                         ]
 
                     ],
-                'contacts' => ['13827028118']
+                'contacts' => ['13837028118']
 
             ];
     }
