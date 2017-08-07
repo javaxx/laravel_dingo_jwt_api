@@ -60,7 +60,7 @@ class TicketController extends BaseController
 
     public function getPrice()
     {
-        return '0.01';
+        return '150';
     }
 
     public function getOrderNo()
