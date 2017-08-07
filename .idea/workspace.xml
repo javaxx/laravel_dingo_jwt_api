@@ -7,7 +7,6 @@
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -487,14 +486,7 @@
       <workItem from="1501983421265" duration="109000" />
       <workItem from="1501983971186" duration="18436000" />
       <workItem from="1502035320202" duration="3060000" />
-      <workItem from="1502074835937" duration="580000" />
-    </task>
-    <task id="LOCAL-00027" summary="集成7牛">
-      <created>1500864394414</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1500864394414</updated>
+      <workItem from="1502074835937" duration="636000" />
     </task>
     <task id="LOCAL-00028" summary="设置时区 ,,ticket排序">
       <created>1500866205959</created>
@@ -832,11 +824,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502074925743</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Y-m-d h:i:s">
+      <created>1502075419715</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1502075419715</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202277000" />
+    <option name="totallyTimeSpent" value="202333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
