@@ -17,6 +17,11 @@ class LoginController extends Controller
 {
     public function index()
     {
+
+        if (Auth::check()){
+            return \redirect('admin/home');
+        }
+
         return view('admin.login.index');
     }
     /*

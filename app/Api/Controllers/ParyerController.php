@@ -30,7 +30,6 @@ class ParyerController extends BaseController
         $postData = request(['name','idCard']);
         $user = $this->getAuthenticatedUser();
         $payer=Payer::where($postData)->first();
-
         if ($payer) {
             if ($user->payers()->get()->contains($payer)) {
                             return [

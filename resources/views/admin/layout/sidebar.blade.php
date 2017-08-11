@@ -16,18 +16,18 @@
                 </ul>
             </li>
             <li class="active treeview">
-                <a href="/admin/posts">
-                    <i class="fa fa-dashboard"></i> <span>文章管理</span>
+                <a href="/admin/tickets">
+                    <i class="fa fa-dashboard"></i> <span>车票管理</span>
                 </a>
             </li>
             <li class="active treeview">
-                <a href="/admin/topics">
-                    <i class="fa fa-dashboard"></i> <span>专题管理</span>
+                <a href="/admin/payers">
+                    <i class="fa fa-dashboard"></i> <span>购买者</span>
                 </a>
             </li>
             <li class="active treeview">
-                <a href="/admin/notices">
-                    <i class="fa fa-dashboard"></i> <span>通知管理</span>
+                <a href="/admin/price">
+                    <i class="fa fa-dashboard"></i> <span>票价</span>
                 </a>
             </li>
         </ul>

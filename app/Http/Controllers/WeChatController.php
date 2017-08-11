@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\AdminRole;
+use App\Api\Server\AccessTokenServer;
+use App\common;
 use App\Payer;
 use App\Ticket;
 use App\User;
@@ -10,6 +12,7 @@ use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class WeChatController extends Controller
@@ -18,17 +21,21 @@ class WeChatController extends Controller
 
     public function qiuniu()
     {
+        $token = (new AccessTokenServer)->getToken();
+        $url = 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' . $token;
+        $params = ['scene' =>'abc', 'page' => 'pages/home/home',
+            'width' => 250,
 
-        return User::where(['id'=>9])->with('roles')->first();
-
-
+        ];
+        $picturedata = common::curl_post($url, $params);
+        $disk = \Storage::disk('qiniu');
+       $a =  $disk->put('123'.'.png',$picturedata);
     }
     public function index(Request $request)
     {
         $no = $request->no;
         $this->id = $no;
         if ($no){
-
             $wxOrderData  = new WxPayUnifiedOrder();
             $wxOrderData->SetOut_trade_no($no);
             $wxOrderData->SetTrade_type("JSAPI");
@@ -37,8 +44,6 @@ class WeChatController extends Controller
             $wxOrderData->SetOpenid('oZaLq0EEFIVm7fQTYH6z6awldj0U');
             $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
             return $this->getPaySignature($wxOrderData);
-
-
         }
     }
 
