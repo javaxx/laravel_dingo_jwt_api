@@ -27,8 +27,10 @@ class TicketController extends BaseController
         $payer = Payer::find($payerID);//
 //        $payer = Payer::where(['id'=>$payerID])->find();//
         if ($payer) {
-            $user = UserServer::getUser();
-            $user_id = $user->id;
+
+            $user = Auth::user();
+
+            $user_id = Auth::id();
 
            $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
 
@@ -39,7 +41,7 @@ class TicketController extends BaseController
                     'tno' => $tno,
                     'user_id'=>$user_id,
                     'payer_id' => $payer_id,
-                    'money' => $this->getPrice(),
+                    'money' => $this->getPrice( $user ),
                 ];
                 $t=Ticket::create($params);
                 if ($t) {
@@ -58,8 +60,14 @@ class TicketController extends BaseController
         }
     }
 
-    public function getPrice()
+    public function getPrice($user)
     {
+
+        if ($user){
+            if ($user->name == 'Admin') {
+                return 0.01;
+            }
+        }
         return '150';
     }
 
@@ -76,7 +84,6 @@ class TicketController extends BaseController
 
     public function getTicketList()
     {
-       // $id =Auth::id();
         $user = Auth::user();
         $roles = $user->roles;
         $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {

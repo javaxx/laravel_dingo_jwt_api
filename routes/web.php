@@ -20,16 +20,16 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
         $api->post('notifyUrl', 'WeChatController@notifyUrl');
-        $api->get('addTicket', 'TicketController@addTicket');
-        $api->get('getPrice', 'TicketController@getPrice');
-        $api->get('lessons/{id}', 'LessonsController@show');
         $api->get('token', 'UserTokenController@index');
         $api->get('getBanner', 'BannerController@getBanner');
         $api->get('getLocation', 'BannerController@getLocation');
+        $api->get('getPrice', 'TicketController@getPrice');
         $api->post('token', 'UserTokenController@index');
-               $api->post('user/login','AuthController@authenticate');
-               $api->post('user/register','AuthController@register');
                 $api->group(['middleware' => 'jwt.auth'], function ($api) {
+
+
+                    $api->get('addTicket', 'TicketController@addTicket');
+
                     $api->get('getNotPayTickets', 'TicketController@getNotPayTickets');
                     $api->post('/wechat','WeChatController@index');
                     $api->get('tickets', 'TicketController@getTicketList');
