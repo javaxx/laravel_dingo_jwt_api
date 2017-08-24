@@ -41,7 +41,7 @@ class TicketController extends BaseController
                     'tno' => $tno,
                     'user_id'=>$user_id,
                     'payer_id' => $payer_id,
-                    'money' => ($user->name == 'Admin')? 0.01:$this->getPrice(),
+                    'money' => $this->getPrice(  ),
                 ];
                 $t=Ticket::create($params);
                 if ($t) {
@@ -63,7 +63,7 @@ class TicketController extends BaseController
     {
 
 
-        return '150';
+        return 0.01;
     }
     public function getAdminPrice($user)
     {
