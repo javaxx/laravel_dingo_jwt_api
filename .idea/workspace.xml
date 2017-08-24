@@ -30,8 +30,8 @@
       <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+            <state relative-caret-position="475">
+              <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
               <folding>
                 <element signature="e#118#148#0#PHP" expanded="true" />
               </folding>
@@ -505,14 +505,7 @@
       <workItem from="1502819862038" duration="2595000" />
       <workItem from="1502939625987" duration="2493000" />
       <workItem from="1503064750716" duration="1341000" />
-      <workItem from="1503582225660" duration="2755000" />
-    </task>
-    <task id="LOCAL-00040" summary="增加payer 的检测">
-      <created>1501237655243</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1501237655243</updated>
+      <workItem from="1503582225660" duration="2838000" />
     </task>
     <task id="LOCAL-00041" summary="增加payer 的检测">
       <created>1501237874349</created>
@@ -850,11 +843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503584980576</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Token时间">
+      <created>1503585052443</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1503585052443</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242702000" />
+    <option name="totallyTimeSpent" value="242785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1318,8 +1318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+        <state relative-caret-position="475">
+          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
           <folding>
             <element signature="e#118#148#0#PHP" expanded="true" />
           </folding>

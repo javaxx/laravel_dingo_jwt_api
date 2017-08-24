@@ -65,7 +65,7 @@ class TicketController extends BaseController
 
         return 150;
     }
-    public function getAdminPrice(User $user)
+    public function getAdminPrice($user)
     {
 
         if ($user){
