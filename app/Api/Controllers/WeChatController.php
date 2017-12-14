@@ -44,7 +44,7 @@ class WeChatController extends BaseController
             $wxOrderData->SetTotal_fee($price*100);
             $wxOrderData->SetBody('订购商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
-            $wxOrderData->SetNotify_url('https://www.numbersi.cn/api/notifyUrl');
+            $wxOrderData->SetNotify_url('https://t.numbersi.cn/api/notifyUrl');
 
             return $this->getPaySignature($wxOrderData);
 
