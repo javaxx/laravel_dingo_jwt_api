@@ -10,9 +10,9 @@
 |
 */
 //
-//Route::get('/', function () {
-//   return view('welcome');
-//});
+Route::get('/', function () {
+   return '123';
+});
 
 Route::get('/wechat','WeChatController@index');
 Route::get('/qiuniu','WeChatController@qiuniu');

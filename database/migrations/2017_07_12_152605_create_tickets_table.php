@@ -19,6 +19,7 @@ class CreateTicketsTable extends Migration
             $table->string('token');
             $table->integer('user_id');
             $table->string('check_id');
+
             $table->string('payer_id');
             $table->boolean('status');
             $table->decimal('money');
