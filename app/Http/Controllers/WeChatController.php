@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\AdminRole;
-use App\Api\Server\AccessTokenServer;
-use App\common;
-use App\Payer;
 use App\Ticket;
-use App\User;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 
 class WeChatController extends Controller
@@ -21,7 +17,7 @@ class WeChatController extends Controller
 
     public function qiuniu()
     {
-        $token = (new AccessTokenServer)->getToken();
+/*        $token = (new AccessTokenServer)->getToken();
         $url = 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' . $token;
         $params = ['scene' =>'abc', 'page' => 'pages/home/home',
             'width' => 250,
@@ -29,7 +25,15 @@ class WeChatController extends Controller
         ];
         $picturedata = common::curl_post($url, $params);
         $disk = \Storage::disk('qiniu');
-       $a =  $disk->put('123'.'.png',$picturedata);
+       $a =  $disk->put('123'.'.png',$picturedata);*/
+
+
+        // $path = public_path('qrcodes/' . $filesName . '.png');
+/*        $picturedata=  QrCode::format('png')->size(250)->margin(1)->merge('/public/qrcodes/icon.png',.15)->generate(123123);
+        // $this->getImage($path);
+        $disk = \Storage::disk('qiniu');
+        $disk->put('123123.png',$picturedata);*/
+       // Storage::disk('local')->put('file.txt','123');
     }
     public function index(Request $request)
     {

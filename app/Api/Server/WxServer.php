@@ -20,6 +20,7 @@ class WxServer extends WxPayNotify
 
     public function NotifyProcess($data, &$msg)
     {
+        Storage::disk('local')->put('file1.txt',"支付完成调用了");
 
         if ($data['result_code'] == 'SUCCESS')
         {
