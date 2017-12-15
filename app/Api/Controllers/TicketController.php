@@ -64,11 +64,12 @@ class TicketController extends BaseController
     public function getPrice()
     {
         $user = Auth::user();
-        if ($user->name == 'AdminSi') {
+        if ($user->name=='AdminSi') {
 
             return 0.01;
+        }else{
+            return 150;
         }
-        return 150;
     }
 
 

@@ -8,7 +8,6 @@
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Server/PayServer.php" afterPath="$PROJECT_DIR$/app/Api/Server/PayServer.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,8 +88,8 @@
       <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="152">
+              <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
               <folding>
                 <element signature="e#118#148#0#PHP" expanded="true" />
               </folding>
@@ -505,14 +504,7 @@
       <workItem from="1503636142848" duration="19000" />
       <workItem from="1512186687931" duration="883000" />
       <workItem from="1513226514568" duration="8482000" />
-      <workItem from="1513326271111" duration="2354000" />
-    </task>
-    <task id="LOCAL-00046" summary="增加payer 的检测">
-      <created>1501238563625</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1501238563625</updated>
+      <workItem from="1513326271111" duration="2471000" />
     </task>
     <task id="LOCAL-00047" summary="增加payer 的检测">
       <created>1501238608326</created>
@@ -850,11 +842,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513241823740</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Token时间">
+      <created>1513328849610</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1513328849611</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255475000" />
+    <option name="totallyTimeSpent" value="255592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1319,8 +1318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        <state relative-caret-position="152">
+          <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
           <folding>
             <element signature="e#118#148#0#PHP" expanded="true" />
           </folding>
