@@ -14,6 +14,7 @@ use App\Payer;
 use App\Ticket;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TicketController extends BaseController
 {
@@ -44,6 +45,7 @@ class TicketController extends BaseController
                     'money' => $this->getPrice($user),
                 ];
                 $t=Ticket::create($params);
+                Storage::disk('local')->put('file.txt',$t);
                 if ($t) {
                     return response()->json([
                         'no'=>$tno,
@@ -62,8 +64,8 @@ class TicketController extends BaseController
     public function getPrice()
     {
         $user = Auth::user();
-        if ($user) {
-            $user->name == 'Admin';
+        if ($user->name == 'AdminSi') {
+
             return 0.01;
         }
         return 150;

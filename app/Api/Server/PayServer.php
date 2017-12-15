@@ -15,8 +15,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Auth,Redirect;
 use Validator;
-use EasyWeChat\Foundation\Application;
-use EasyWeChat\Payment\Order;
+
 
 
 class PayServer
