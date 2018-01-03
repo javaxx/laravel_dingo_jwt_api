@@ -33,7 +33,7 @@ class WeChatController extends BaseController
         if ($no){
             $tc =new TicketController();
             $price = $tc->getPrice();
-            if ($user->name==='AdminSi') {
+            if ($user->name=='AdminSi') {
                 $price = 0.01;
             }
             $wxOrderData  = new WxPayUnifiedOrder();
