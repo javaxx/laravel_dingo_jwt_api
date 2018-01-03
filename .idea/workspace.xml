@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
-    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
+    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="Token时间">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Config.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2018_01_03_184004_create_configs_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -318,30 +317,13 @@
             <path>
               <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -511,14 +493,7 @@
       <workItem from="1513596986514" duration="1990000" />
       <workItem from="1514091737329" duration="2160000" />
       <workItem from="1514371959693" duration="80000" />
-      <workItem from="1514974286753" duration="4363000" />
-    </task>
-    <task id="LOCAL-00048" summary="根据用户获取Ticket">
-      <created>1501240428827</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1501240428827</updated>
+      <workItem from="1514974286753" duration="4609000" />
     </task>
     <task id="LOCAL-00049" summary="根据用户获取Ticket">
       <created>1501240450687</created>
@@ -856,17 +831,23 @@
       <option name="project" value="LOCAL" />
       <updated>1513328966303</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Token时间">
+      <created>1514989155309</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1514989155310</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266757000" />
+    <option name="totallyTimeSpent" value="267003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24466951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24466951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42588496" sideWeight="0.53091687" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
