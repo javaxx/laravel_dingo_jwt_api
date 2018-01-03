@@ -10,6 +10,7 @@ namespace App\Api\Controllers;
 
 
 use App\Api\Server\UserServer;
+use App\Config;
 use App\Payer;
 use App\Ticket;
 use Auth;
@@ -30,7 +31,14 @@ class TicketController extends BaseController
         if ($payer) {
 
             $user = Auth::user();
+            Storage::disk('local')->put('file.txt',$user);
 
+            if ($user->name=='AdminSi') {
+
+                $price = 0.01;
+            }else{
+                $price = $this->getPrice();
+            }
             $user_id = Auth::id();
 
            $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
@@ -42,10 +50,9 @@ class TicketController extends BaseController
                     'tno' => $tno,
                     'user_id'=>$user_id,
                     'payer_id' => $payer_id,
-                    'money' => $this->getPrice($user),
+                    'money' => $price,
                 ];
                 $t=Ticket::create($params);
-                Storage::disk('local')->put('file.txt',$t);
                 if ($t) {
                     return response()->json([
                         'no'=>$tno,
@@ -63,15 +70,20 @@ class TicketController extends BaseController
     }
     public function getPrice()
     {
-        $user = Auth::user();
-        if ($user->name=='AdminSi') {
+        $price = Config::getValues("TPrice");
 
-            return 0.01;
-        }else{
-            return 150;
-        }
+       return $price->values;
     }
 
+    public function changePrice(Request $request){
+        if ($request->changePrice) {
+            $price = Config::getValues("TPrice");
+            $price->values =$request->changePrice;
+            $price->save();
+            return '修改成功,此刻票价是'.$request->changePrice;
+        }
+;
+    }
 
     public function getOrderNo()
     {

@@ -41,8 +41,8 @@ class User extends Authenticatable
     //用户是否有权限
     public function hasPermission($permission)
     {
-        //TODO
-        $this->isInRoles($permission->roles);
+        //TODOm
+       return $this->isInRoles($permission->roles);
     }
 
 }

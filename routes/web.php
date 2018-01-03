@@ -26,13 +26,11 @@ $api->version('v1', function ($api) {
         $api->get('getPrice', 'TicketController@getPrice');
         $api->post('token', 'UserTokenController@index');
                 $api->group(['middleware' => 'jwt.auth'], function ($api) {
-
-
                     $api->get('addTicket', 'TicketController@addTicket');
-
                     $api->get('getNotPayTickets', 'TicketController@getNotPayTickets');
                     $api->post('/wechat','WeChatController@index');
                     $api->get('tickets', 'TicketController@getTicketList');
+                    $api->post('changePrice', 'TicketController@changePrice');
                     $api->POST('delTicket', 'TicketController@delTicket');
                     $api->post('/wechat','WeChatController@index');
                     $api->get('user/me', 'AuthController@getAuthenticatedUser');
@@ -44,7 +42,6 @@ $api->version('v1', function ($api) {
                     $api->post('checkTicket','CheckController@checkTicket');
                     $api->get('checked','CheckController@checkedTickets');
                     $api->get('getChecked','CheckController@getChecked');
-
                 });
 
     });
