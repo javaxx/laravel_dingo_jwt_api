@@ -9,10 +9,9 @@
 namespace App\Api\Controllers;
 
 
-use App\Api\Server\UserServer;
 use App\Api\Server\WxServer;
 use App\Ticket;
-use App\User;
+use Auth;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
