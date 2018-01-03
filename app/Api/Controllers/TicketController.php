@@ -27,17 +27,14 @@ class TicketController extends BaseController
         $tno = $this->getOrderNo();
         $payerID = $request->payerID;
         $payer = Payer::find($payerID);//
-//        $payer = Payer::where(['id'=>$payerID])->find();//
         if ($payer) {
 
             $user = Auth::user();
             Storage::disk('local')->put('file.txt',$user);
+            $price = $this->getPrice();
 
-            if ($user->name=='AdminSi') {
-
+            if ($user->name==='AdminSi') {
                 $price = 0.01;
-            }else{
-                $price = $this->getPrice();
             }
             $user_id = Auth::id();
 
