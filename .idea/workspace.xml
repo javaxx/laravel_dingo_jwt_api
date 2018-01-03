@@ -108,8 +108,8 @@
       <file leaf-file-name="WeChatController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/WeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="513">
+              <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
               <folding>
                 <element signature="e#118#146#0#PHP" expanded="true" />
               </folding>
@@ -466,14 +466,7 @@
       <workItem from="1513596986514" duration="1990000" />
       <workItem from="1514091737329" duration="2160000" />
       <workItem from="1514371959693" duration="80000" />
-      <workItem from="1514974286753" duration="6079000" />
-    </task>
-    <task id="LOCAL-00055" summary="关于Home">
-      <created>1501575160572</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1501575160572</updated>
+      <workItem from="1514974286753" duration="6173000" />
     </task>
     <task id="LOCAL-00056" summary="关于Home">
       <created>1501575208215</created>
@@ -811,11 +804,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514990797871</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Token时间">
+      <created>1514990868859</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1514990868859</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268473000" />
+    <option name="totallyTimeSpent" value="268567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1272,8 +1272,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/WeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="513">
+          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
           <folding>
             <element signature="e#118#146#0#PHP" expanded="true" />
           </folding>

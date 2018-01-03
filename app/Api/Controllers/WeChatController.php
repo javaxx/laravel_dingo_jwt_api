@@ -87,7 +87,7 @@ class WeChatController extends BaseController
     {
         $t = Ticket::where(['tno'=>$this->id])->first();
         $t->prepay_id = $prepay_id;
-        $t->created_at=date('Y-m-d h:i:s');
+        $t->created_at=date('Y-m-d H:i:s');
         $t->save();
     }
 
