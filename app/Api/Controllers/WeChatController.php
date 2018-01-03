@@ -24,12 +24,6 @@ class WeChatController extends BaseController
 
     public $id ='';
 
-    public function qiuniu()
-    {
-
-
-
-    }
     public function index(Request $request)
     {
         $user = Auth::user();
@@ -39,7 +33,6 @@ class WeChatController extends BaseController
         if ($no){
             $tc =new TicketController();
             $price = $tc->getPrice();
-
             if ($user->name==='AdminSi') {
                 $price = 0.01;
             }
