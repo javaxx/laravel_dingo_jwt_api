@@ -101,7 +101,7 @@ class WeChatController extends BaseController
     }
 
 // 退款
-    public function refound(Request $request)
+    public function refund(Request $request)
     {
         $user = Auth::user();
         $Openid = $user->openid;
