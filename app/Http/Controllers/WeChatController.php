@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Ticket;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
+use app\Wechat\WxPayRefund;
 use app\Wechat\WxPayUnifiedOrder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 
 
 class WeChatController extends Controller
@@ -87,9 +87,42 @@ class WeChatController extends Controller
     }
     private function recordPreOrder($prepay_id)
     {
-        $t = Ticket::where('tno' ,$this->id)->first();
+        $t = Ticket::where('tno', $this->id)->first();
         $t->prepay_id = $prepay_id;
         $t->save();
+    }
+
+    public function refound()
+    {
+        $reFound = new  WxPayRefund();
+        $wxappid           = '';//应用ID 字符串
+        $mch_id            = '';//商户号 字符串
+        $notify_url        = 'http://api.***.com/api/Wechatpay/apppaysucess';//接收微信支付异步通知回调地址 字符串
+        $wxkey             = '';//这个是在商户中心设置的那个值用来生成签名时保证安全的 字符串
+      //  $wechatAppPay = new wechatapppay($wxappid,$mch_id, $notify_url,$wxkey);
+        $params                     = array();
+//        $params['out_trade_no']     = $order_ns;            //必填项 自定义的订单号
+//        $params['total_fee']        = ($details*100);       //必填项 订单金额 单位为分所以要*100
+//        $params['return_oid']     = $return_oid;            //退款单号
+        // openid    oZaLq0EEFIVm7fQTYH6z6awldj0U
+        //  transaction_id   wx20180220000458b5c57a491b0808767972
+        // out_trade_no     B220562973858294
+        // out_refund_no    B220562973858222
+        //缺少必填参数op_user_id
+      //  $reFound->SetAppid($wxappid);
+        $reFound->SetOut_trade_no('B220562973858294');
+        $reFound->SetOut_refund_no('B220562973858222');
+        $reFound->SetTotal_fee(1);
+        $reFound->SetRefund_fee(1);
+        $reFound->SetOp_user_id('oZaLq0EEFIVm7fQTYH6z6awldj0U');
+        //dd($reFound);
+        return $this->getRuFundSignature($reFound);
+    }
+
+    public function getRuFundSignature($reFound)
+    {
+        $r = WxPayApi::refund($reFound);
+
     }
 
 }

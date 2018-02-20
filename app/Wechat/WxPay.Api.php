@@ -157,14 +157,14 @@ class WxPayApi
 		$inputObj->SetAppid(env('APPID'));//公众账号ID
 		$inputObj->SetMch_id(env('MCHID'));//商户号
 		$inputObj->SetNonce_str(self::getNonceStr());//随机字符串
-		
+
 		$inputObj->SetSign();//签名
 		$xml = $inputObj->ToXml();
 		$startTimeStamp = self::getMillisecond();//请求开始时间
 		$response = self::postXmlCurl($xml, $url, true, $timeOut);
 		$result = WxPayResults::Init($response);
 		self::reportCostTime($url, $startTimeStamp, $result);//上报请求花费时间
-		
+
 		return $result;
 	}
 	
@@ -543,7 +543,7 @@ class WxPayApi
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		//要求结果为字符串且输出到屏幕上
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-	
+
 		if($useCert == true){
 			//设置证书
 			//使用证书：cert 与 key 分别属于两个.pem文件

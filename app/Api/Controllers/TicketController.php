@@ -101,7 +101,6 @@ class TicketController extends BaseController
                 return $item;
             }
         });
-
         if ($Ticket->isEmpty()) {
             return ['status' => false, 'tickets' => $Ticket,'roles'=>$roles];
         }

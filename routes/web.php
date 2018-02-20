@@ -10,12 +10,10 @@
 |
 */
 //
-Route::get('/', function () {
-   return '123';
-});
-
+Route::get('/refound', 'WeChatController@refound');
 Route::get('/wechat','WeChatController@index');
 Route::get('/qiuniu','WeChatController@qiuniu');
+Route::get('/aaa', 'WeChatController@aaa');
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
@@ -43,7 +41,6 @@ $api->version('v1', function ($api) {
                     $api->get('checked','CheckController@checkedTickets');
                     $api->get('getChecked','CheckController@getChecked');
                 });
-
     });
 });
 

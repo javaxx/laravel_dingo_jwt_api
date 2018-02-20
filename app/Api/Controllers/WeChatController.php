@@ -30,9 +30,9 @@ class WeChatController extends BaseController
         $no = $request->no;
         $this->id = $no;
         if ($no){
-            $tc =new TicketController();
+            $tc = new TicketController();
             $price = $tc->getPrice();
-            if ($user->name=='AdminSi') {
+            if ($user->name == 'AdminSi') {
                 $price = 0.01;
             }
             $wxOrderData  = new WxPayUnifiedOrder();
@@ -100,4 +100,24 @@ public function notifyUrl(){
 
 
 }
+// 退款
+    public function refound()
+    {
+        $reFound = new  WxPayRefund();
+        $reFound->SetOut_trade_no('B220562973858294');
+        $reFound->SetOut_refund_no('B220562973858222');
+        $reFound->SetTotal_fee(1);
+        $reFound->SetRefund_fee(1);
+        $reFound->SetOp_user_id('oZaLq0EEFIVm7fQTYH6z6awldj0U');
+        //dd($reFound);
+        return $this->getRuFundSignature($reFound);
+    }
+
+    public function getRuFundSignature($reFound)
+    {
+        $r = WxPayApi::refund($reFound);
+
+    }
+
+
 }
