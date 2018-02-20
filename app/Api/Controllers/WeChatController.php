@@ -11,6 +11,7 @@ namespace App\Api\Controllers;
 
 use App\Api\Server\WxServer;
 use App\Ticket;
+use app\Wechat\WxPayRefund;
 use Auth;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
