@@ -7,7 +7,7 @@
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChatController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChatController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/BannerController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/BannerController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,14 +55,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeChatController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WeChatController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
+            <state relative-caret-position="788">
               <caret line="122" column="18" lean-forward="false" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BannerController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,16 +129,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
               <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -234,7 +234,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_07_12_152605_create_tickets_table.php" />
         <option value="$PROJECT_DIR$/config/filesystems.php" />
         <option value="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/BannerController.php" />
         <option value="$PROJECT_DIR$/app/Api/Server/PayServer.php" />
         <option value="$PROJECT_DIR$/storage/app/file.txt" />
         <option value="$PROJECT_DIR$/app/User.php" />
@@ -250,6 +249,7 @@
         <option value="$PROJECT_DIR$/app/Wechat/WxPay.Api.php" />
         <option value="$PROJECT_DIR$/app/Wechat/WxPay.Config.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChatController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/BannerController.php" />
       </list>
     </option>
   </component>
@@ -314,6 +314,19 @@
               <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_dingo_jwt_api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="laravel_dingo_jwt_api" type="b2602c69:ProjectViewProjectNode" />
@@ -516,14 +529,7 @@
       <workItem from="1514371959693" duration="80000" />
       <workItem from="1514974286753" duration="6190000" />
       <workItem from="1519058577150" duration="5788000" />
-      <workItem from="1519095819471" duration="5664000" />
-    </task>
-    <task id="LOCAL-00061" summary="关于Home">
-      <created>1501576801586</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1501576801586</updated>
+      <workItem from="1519095819471" duration="7015000" />
     </task>
     <task id="LOCAL-00062" summary="关于Home">
       <created>1502031875825</created>
@@ -861,11 +867,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519135872665</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="退票api 初次调试">
+      <created>1519136117332</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1519136117332</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280036000" />
+    <option name="totallyTimeSpent" value="281387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1164,14 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/LessonsController.php" />
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1344,11 +1349,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
+        <state relative-caret-position="788">
           <caret line="122" column="18" lean-forward="false" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
