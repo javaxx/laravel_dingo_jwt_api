@@ -49,6 +49,7 @@ class TicketController extends BaseController
                     'payer_id' => $payer_id,
                     'money' => $price,
                 ];
+
                 $t=Ticket::create($params);
                 if ($t) {
                     return response()->json([
@@ -79,7 +80,6 @@ class TicketController extends BaseController
             $price->save();
             return '修改成功,此刻票价是'.$request->changePrice;
         }
-;
     }
 
     public function getOrderNo()
