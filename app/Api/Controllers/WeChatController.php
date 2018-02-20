@@ -123,7 +123,7 @@ class WeChatController extends BaseController
         $reFound->SetOut_trade_no($out_trade_no);
         $reFound->SetOut_refund_no($ut_refund_no);
         $reFound->SetTotal_fee($tPrice);
-        $reFound->SetRefund_fee($tPrice*0.9);
+        $reFound->SetRefund_fee($tPrice);
         $reFound->SetOp_user_id($Openid);
         //dd($reFound);
         return $this->getRuFundSignature($reFound);
