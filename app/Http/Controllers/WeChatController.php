@@ -9,8 +9,6 @@ use app\Wechat\WxPayRefund;
 use app\Wechat\WxPayUnifiedOrder;
 use Illuminate\Http\Request;
 
-
-
 class WeChatController extends Controller
 {
     public $id ='';
