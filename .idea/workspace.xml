@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
-    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
+    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="退票api 初次调试">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Server/WxServer.php" afterPath="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +48,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="380">
+              <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -532,14 +529,7 @@
       <workItem from="1514371959693" duration="80000" />
       <workItem from="1514974286753" duration="6190000" />
       <workItem from="1519058577150" duration="5788000" />
-      <workItem from="1519095819471" duration="11343000" />
-    </task>
-    <task id="LOCAL-00064" summary="关于Home">
-      <created>1502032016186</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1502032016186</updated>
+      <workItem from="1519095819471" duration="11560000" />
     </task>
     <task id="LOCAL-00065" summary="ReflectionException">
       <created>1502032576120</created>
@@ -877,11 +867,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519141470501</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="退票api 初次调试">
+      <created>1519145303632</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1519145303632</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285715000" />
+    <option name="totallyTimeSpent" value="285932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1364,8 +1361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state relative-caret-position="380">
+          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
           <folding />
         </state>
       </provider>
