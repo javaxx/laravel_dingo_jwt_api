@@ -45,11 +45,10 @@ class TicketController extends BaseController
                 $params = [
                     'token'=>'',
                     'tno' => $tno,
-                    'user_id'=>$user_id,
+                    'user_id' => $user_id,
                     'payer_id' => $payer_id,
                     'money' => $price,
                 ];
-
                 $t=Ticket::create($params);
                 if ($t) {
                     return response()->json([
