@@ -27,6 +27,7 @@ $api->version('v1', function ($api) {
                     $api->get('addTicket', 'TicketController@addTicket');
                     $api->get('getNotPayTickets', 'TicketController@getNotPayTickets');
                     $api->post('/wechat','WeChatController@index');
+                    $api->get('/refund','WeChatController@refundTicke');
                     $api->get('tickets', 'TicketController@getTicketList');
                     $api->post('changePrice', 'TicketController@changePrice');
                     $api->POST('delTicket', 'TicketController@delTicket');

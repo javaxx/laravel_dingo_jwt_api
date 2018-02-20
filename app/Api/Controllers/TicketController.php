@@ -99,6 +99,7 @@ class TicketController extends BaseController
         $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
 
             $item->times =strtotime( $item->updated_at);
+            $item->expiredTimes = $item->times - 86400;
             if ($item->token == '') {
                 return $item;
             }
