@@ -120,6 +120,7 @@ class WeChatController extends Controller
     public function getRuFundSignature($reFound)
     {
         $r = WxPayApi::refund($reFound);
+        return $r;
 
     }
 
