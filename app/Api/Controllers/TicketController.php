@@ -97,10 +97,13 @@ class TicketController extends BaseController
         $user = Auth::user();
         $roles = $user->roles;
         $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
+
+            $item->times =strtotime( $item->updated_at);
             if ($item->token == '') {
                 return $item;
             }
         });
+
         if ($Ticket->isEmpty()) {
             return ['status' => false, 'tickets' => $Ticket,'roles'=>$roles];
         }
@@ -112,10 +115,8 @@ class TicketController extends BaseController
     {
         $id =Auth::id();
         $Ticket = Ticket::where(['user_id'=> $id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
-
             if ($item->token != '') {
                 return $item;
-
             }
         });
         if ($Ticket->isEmpty()) {
