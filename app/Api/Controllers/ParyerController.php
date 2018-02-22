@@ -52,27 +52,12 @@ class ParyerController extends BaseController
             'message' => '增加成功,去购票'
         ];
     }
-    public function getAuthenticatedUser()
-    {
-        try {
-            if (! $user = JWTAuth::parseToken()->authenticate()) {
-                return response()->json(['user_not_found'], 404);
-            }
-        } catch (TokenExpiredException $e) {
-            return response()->json(['token_expired'], $e->getStatusCode());
-        } catch (TokenInvalidException $e) {
-            return response()->json(['token_invalid'], $e->getStatusCode());
-        } catch (JWTException $e) {
-            return response()->json(['token_absent'], $e->getStatusCode());
-        }
-        return $user;
-    }
-
     public function payerList(){
         $user = Auth::user();
         $payer = $user->payers()->get();
+       // dd($this->collection($payer, new PayerTransformer()));
         if (!$payer->isEmpty()) {
-            return ['payers'=>$this->collection($payer,new PayerTransformer()),'coupons'=>$user->getCoupon()->get()];
+            return ['payers'=>$payer,'coupons'=>$user->getCoupon()->get()];
         }
         return null;
     }
