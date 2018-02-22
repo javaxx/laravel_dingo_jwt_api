@@ -41,6 +41,7 @@ class BannerController extends BaseController
                         ]
                     ],
                 'contacts' => ['13837028118','17739388881'],
+                'gonggao' => '',
                 'gzh'=>['微信搜索关注公众号"沙集客运",便捷了解客车资讯,留言乘车意见与建议']
             ];
     }

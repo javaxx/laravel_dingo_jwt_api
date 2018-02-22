@@ -13,7 +13,7 @@
 Route::get('/refound', 'WeChatController@refound');
 Route::get('/wechat','WeChatController@index');
 Route::get('/qiuniu','WeChatController@qiuniu');
-Route::get('/aaa', 'WeChatController@aaa');
+Route::get('/aaa/{user}', 'WeChatController@aaa');
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
@@ -26,6 +26,7 @@ $api->version('v1', function ($api) {
                 $api->group(['middleware' => 'jwt.auth'], function ($api) {
                     $api->get('addTicket', 'TicketController@addTicket');
                     $api->get('getNotPayTickets', 'TicketController@getNotPayTickets');
+                    $api->post('getTicketByNO', 'TicketController@getTicketByNO');
                     $api->post('/wechat','WeChatController@index');
                     $api->get('/refundTicke','WeChatController@refund');
                     $api->get('tickets', 'TicketController@getTicketList');
@@ -41,6 +42,9 @@ $api->version('v1', function ($api) {
                     $api->post('checkTicket','CheckController@checkTicket');
                     $api->get('checked','CheckController@checkedTickets');
                     $api->get('getChecked','CheckController@getChecked');
+                    $api->post('getUser','UserTokenController@getUser');
+                    $api->post('addCoupon','CouponController@addCoupon');
+                    $api->post('follow','CouponController@follow');
                 });
     });
 });

@@ -22,9 +22,11 @@ class UserTokenServer
     protected $wxAppSecret='' ;
     protected $wxLoginUrl='';
     protected $name;
-    function __construct($code=9,$name='')
+    protected $avatarUrl;
+    function __construct($code=9,$name='',$avatarUrl='')
     {
         $this->name = $name;
+        $this->avatarUrl = $avatarUrl;
         $this->code = $code;
         $this->wxAppID = env('wxAppID');
         $this->wxAppSecret =env('wxAppSecret');
@@ -36,9 +38,13 @@ class UserTokenServer
 
     public function getToken()
     {
-
-
         $result =common::curl_get($this->wxLoginUrl);
+
+        //https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+//        https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
+//        $uerinfo_url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token=7_9GbAY4u0aLcskmtN4EPD_0xfkvVLrxmaol7Ty3-4nupwsKB3TOFECrtFcHA4JWurso-chdqHhks179pXk1M7PHUEpS04mEaoGbsjPfNGlBu-olvB2_BKmrTByyuyMRqiHs2ADTNMvcPttDq-BKLiAEAJST&openid=$10$BLki484vSnTNslIBUiBkXO/YycPda5rR7f6c9KLZ6E732tcXVG7ki&lang=zh_CN';
+//        $result =common::curl_get($uerinfo_url);
+
        // $request = Request::create($this->wxLoginUrl, 'GET');
         //dd($request->appid);
 
@@ -53,7 +59,6 @@ class UserTokenServer
             if (array_key_exists('errcode',$wxResult)) {
                 return response()->json(['error' =>$wxResult['errcode'] , 500]);
             } else {
-
                 return $this->grantToken($wxResult);
             }
         }
@@ -61,8 +66,6 @@ class UserTokenServer
 
     private function grantToken($wxResult)
     {
-
-
        // $id = ['openid'=>$wxResult['openid']];
         $openid = $wxResult['openid'];
        // $OpenId = new Openid;
@@ -74,10 +77,10 @@ class UserTokenServer
 
         }else{
             //增加 openid 微信用户
-
             $params = [
                 'openid' => $openid,
                 'name' =>  $this->name,
+                'avatarUrl' =>  $this->avatarUrl,
                 'email' => 'demo@demo.demo',
                 'password' =>bcrypt('demo'),
                 'remember_token' => 'remember_token',

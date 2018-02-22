@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ticket;
+use App\User;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayRefund;
@@ -13,6 +14,9 @@ class WeChatController extends Controller
 {
     public $id ='';
 
+    public function aaa(User $user)
+    {
+    }
     public function qiuniu()
     {
 /*        $token = (new AccessTokenServer)->getToken();

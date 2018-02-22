@@ -11,6 +11,7 @@ namespace App\Api\Controllers;
 
 use App\Api\Server\UserServer;
 use App\Config;
+use App\Coupon;
 use App\Payer;
 use App\Ticket;
 use Auth;
@@ -22,24 +23,20 @@ class TicketController extends BaseController
 
 
     public function getNo(Request $request)
-
     {
         $tno = $this->getOrderNo();
         $payerID = $request->payerID;
+        $couponID = $request->couponID;
         $payer = Payer::find($payerID);//
         if ($payer) {
-
             $user = Auth::user();
             Storage::disk('local')->put('file.txt',$user);
-            $price = $this->getPrice();
-
+            $price = $this->preferential_price($couponID);
             if ($user->name==='AdminSi') {
-                $price = 0.01;
+                //$price = 0.01;
             }
             $user_id = Auth::id();
-
            $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
-
             if ($ts->count()<5) {
                 $payer_id = $payerID;
                 $params = [
@@ -47,6 +44,7 @@ class TicketController extends BaseController
                     'tno' => $tno,
                     'user_id' => $user_id,
                     'payer_id' => $payer_id,
+                    'coupon_id' => $couponID,
                     'money' => $price,
                 ];
                 $t=Ticket::create($params);
@@ -64,7 +62,38 @@ class TicketController extends BaseController
                 ], 404);
             }
         }
+
     }
+
+    public function preferential_price($couponID)
+    {
+        $price = $this->getPrice();
+        if ($couponID == -1) {
+            return $price;
+        }
+        $coupon = Coupon::find($couponID);
+        if (!$coupon){
+            return $price;
+        }
+
+
+
+        return $price - $coupon->money;
+    }
+
+    /*
+     *  根据 tno 查询单个订单 信息
+     */
+    public function getTicketByNO(Request $request)
+    {
+        $tno = $request->tno;
+        $t = Ticket::where(['tno'=>$tno])->with('payers')->get();
+        if ($t->isEmpty()) {
+            return ['status' => false, 'ticket' => $t];
+        }
+        return ['status' => true, 'ticket' => $t];
+    }
+
     public function getPrice()
     {
         $price = Config::getValues("TPrice");
@@ -80,7 +109,6 @@ class TicketController extends BaseController
             return '修改成功,此刻票价是'.$request->changePrice;
         }
     }
-
     public function getOrderNo()
     {
         $yCode = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
@@ -95,6 +123,7 @@ class TicketController extends BaseController
     public function getTicketList()
     {
         $user = Auth::user();
+
         $roles = $user->roles;
         $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
 
@@ -106,9 +135,9 @@ class TicketController extends BaseController
         });
 
         if ($Ticket->isEmpty()) {
-            return ['status' => false, 'tickets' => $Ticket,'roles'=>$roles];
+            return ['status' => false, 'tickets' => $Ticket,'roles'=>$roles,'coupons'=>$user->getCoupon()->get()];
         }
-        return ['status' => true, 'tickets' => $Ticket,'roles'=>$roles];
+        return ['status' => true, 'tickets' => $Ticket,'roles'=>$roles,'coupons'=>$user->getCoupon()->get()];
     }
 
 
@@ -128,9 +157,6 @@ class TicketController extends BaseController
 
     public function delTicket(Request $request)
     {
-
-
-
         $id = $request->id;
         if ($id) {
             $result =Ticket::destroy($id);

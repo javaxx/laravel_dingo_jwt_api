@@ -14,7 +14,29 @@ class User extends Authenticatable
         return $this->hasMany(\App\Ticket::class, 'check_id', 'id')->with('payers')->latest('updated_at')->whereDate('updated_at',date('y-m-d',time()));
     }
 
+    //获取优惠券
+    public function getCoupon()
+    {
+        return $this->belongsToMany(\App\Coupon::class,'user_coupons','user_id','coupons_id');
+    }
+    // 获取活动跟随者
+    public function getFollower()
+    {
+        return $this->belongsToMany(\App\User::class,'sharelist','share_uid','follow_uid')->oldest('created_at');
 
+    }
+    // 获取活动跟随者
+    public function getFollowerByStatus_0()
+    {
+        return $this->belongsToMany(\App\User::class,'sharelist','share_uid','follow_uid')->oldest('created_at')->where(['status'=>0]);
+    }
+    //获取活动领导者
+
+    public function getLeader()
+    {
+        return $this->belongsToMany(\App\User::class,'sharelist','follow_uid','share_uid');
+
+    }
     public function payers()
     {
         return $this->belongsToMany('App\Payer','user_payer')->withTimestamps();

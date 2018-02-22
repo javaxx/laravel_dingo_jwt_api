@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lesson extends Model
+class Coupon extends Model
 {
     //
+    protected $guarded = [];
+
 }

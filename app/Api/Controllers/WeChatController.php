@@ -10,30 +10,31 @@ namespace App\Api\Controllers;
 
 
 use App\Api\Server\WxServer;
+use App\Coupon;
 use App\Ticket;
 use app\Wechat\WxPayRefund;
 use Auth;
 use app\Wechat\WxPayApi;
 use app\Wechat\WxPayJsApiPay;
 use app\Wechat\WxPayUnifiedOrder;
+use Illuminate\Contracts\Logging\Log;
 use Illuminate\Http\Request;
 
 
 class WeChatController extends BaseController
 {
 
-
+    public $id = 0;
     public function index(Request $request)
     {
         $user = Auth::user();
         $Openid = $user->openid;
         $no = $request->no;
-        if ($no) {
-            $tc = new TicketController();
-            $price = $tc->getPrice();
-            if ($user->name == 'AdminSi') {
-                $price = 0.01;
-            }
+        $t = Ticket::where(['tno'=>$no])->with('payers')->first();
+        if ($t) {
+            $price = $t->money;
+            $this->delUserCoupon($user,$t->coupon_id);
+            dd(123);
             $wxOrderData = new WxPayUnifiedOrder();
             $wxOrderData->SetOut_trade_no($no);
             $wxOrderData->SetTrade_type("JSAPI");
@@ -41,11 +42,19 @@ class WeChatController extends BaseController
             $wxOrderData->SetBody('订购商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://t.numbersi.cn/api/notifyUrl');
-
             return $this->getPaySignature($wxOrderData);
+        }
+    }
 
+    public function delUserCoupon($user,$coupon_id)
+    {
+
+        if ($coupon_id == -1) {
+            return;
 
         }
+       // $c = Coupon::find($coupon_id);
+        $user->getCoupon()->detach($coupon_id);
     }
 
     public function getPaySignature($wxOrderData)
@@ -54,20 +63,20 @@ class WeChatController extends BaseController
         if ($wxOrder['return_code'] != 'SUCCESS' ||
             $wxOrder['result_code'] != 'SUCCESS'
         ) {
-            Log::record($wxOrder, 'error');
-            Log::record('获取预支付订单失败', 'error');
+            dd($wxOrder);
         }
         //prepay_id
         $signature = $this->sign($wxOrder);
+
+        $t = Ticket::where(['tno' => $this->id])->first();
+        $this->recordPreOrder($wxOrder['prepay_id'],$t);
+
         return $signature;
 
     }
 
     private function sign($wxOrder)
     {
-
-        //  var_dump($wxOrder);
-
         $jsApiPayData = new WxPayJsApiPay();
         $jsApiPayData->SetAppid(env('wxAppID'));
         $jsApiPayData->SetTimeStamp((string)time());
@@ -77,14 +86,12 @@ class WeChatController extends BaseController
         $jsApiPayData->SetSignType('md5');
         $sign = $jsApiPayData->MakeSign();
         $rawData = $jsApiPayData->GetValues();
-        $this->recordPreOrder($wxOrder['prepay_id']);
         $rawData['paySign'] = $sign;
         return $rawData;
     }
 
-    private function recordPreOrder($prepay_id)
+    private function recordPreOrder($prepay_id,$t)
     {
-        $t = Ticket::where(['tno' => $this->id])->first();
         $t->prepay_id = $prepay_id;
         $t->created_at = date('Y-m-d H:i:s');
         $t->save();
@@ -128,12 +135,15 @@ class WeChatController extends BaseController
         //dd($reFound);
         return $this->getRuFundSignature($reFound);
     }
-
     public function getRuFundSignature($reFound)
     {
         $r = WxPayApi::refund($reFound);
-        dd($r);
+
+        if ($r['return_code'] != 'SUCCESS' ||
+            $r['result_code'] != 'SUCCESS'
+        ) {
+            Log::record($r, 'error');
+            Log::record('获取预支付订单失败', 'error');
+        }
     }
-
-
 }
