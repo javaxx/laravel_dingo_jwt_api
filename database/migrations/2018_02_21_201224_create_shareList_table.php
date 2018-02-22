@@ -14,7 +14,7 @@ class CreateShareListTable extends Migration
     public function up()
     {
         //
-        Schema::create('shareList', function (Blueprint $table) {
+        Schema::create('sharelist', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('share_uid');
             $table->integer('follow_uid');
@@ -31,7 +31,7 @@ class CreateShareListTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('shareList');
+        Schema::dropIfExists('sharelist');
 
     }
 }
