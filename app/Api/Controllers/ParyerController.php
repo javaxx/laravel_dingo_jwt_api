@@ -69,7 +69,7 @@ class ParyerController extends BaseController
     }
 
     public function payerList(){
-        $user = UserServer::getUser();
+        $user = Auth::user();
         $payer = $user->payers()->get();
         if (!$payer->isEmpty()) {
             return ['payers'=>$this->collection($payer,new PayerTransformer()),'coupons'=>$user->getCoupon()->get()];
