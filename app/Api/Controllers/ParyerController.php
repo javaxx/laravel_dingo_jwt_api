@@ -13,7 +13,7 @@ use App\Api\Server\UserServer;
 use App\Api\Transformers\PayerTransformer;
 use App\Payer;
 use Dingo\Api\Exception\StoreResourceFailedException;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Illuminate\Support\Facades\DB;
 use JWTAuth;
 use Symfony\Component\Console\Helper\Table;
@@ -28,7 +28,7 @@ class ParyerController extends BaseController
     public function addPayer()
     {
         $postData = request(['name','idCard']);
-        $user = $this->getAuthenticatedUser();
+        $user = Auth::user();
         $payer=Payer::where($postData)->first();
         if ($payer) {
             if ($user->payers()->get()->contains($payer)) {
