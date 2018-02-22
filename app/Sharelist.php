@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sharelist extends Model
 {
-    protected $table = 'sharelist';
+    protected $table = 'shareList';
     public static function isFollower($userID)
     {
         $r = self::where(['follow_uid' => $userID,])->get();
