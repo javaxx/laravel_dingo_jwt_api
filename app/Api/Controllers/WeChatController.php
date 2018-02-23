@@ -142,8 +142,7 @@ class WeChatController extends BaseController
         if ($r['return_code'] != 'SUCCESS' ||
             $r['result_code'] != 'SUCCESS'
         ) {
-            Log::record($r, 'error');
-            Log::record('获取预支付订单失败', 'error');
+            dd($r);
         }
     }
 }
