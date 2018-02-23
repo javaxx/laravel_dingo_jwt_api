@@ -34,7 +34,6 @@ class WeChatController extends BaseController
         if ($t) {
             $price = $t->money;
             $this->delUserCoupon($user,$t->coupon_id);
-            dd(123);
             $wxOrderData = new WxPayUnifiedOrder();
             $wxOrderData->SetOut_trade_no($no);
             $wxOrderData->SetTrade_type("JSAPI");
