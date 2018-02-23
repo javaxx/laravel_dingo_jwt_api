@@ -41,6 +41,7 @@ class WeChatController extends BaseController
             $wxOrderData->SetBody('商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://t.numbersi.cn/api/notifyUrl');
+            dd($this->getPaySignature($wxOrderData));
             return $this->getPaySignature($wxOrderData);
         }
     }
@@ -52,7 +53,6 @@ class WeChatController extends BaseController
             return;
 
         }
-       // $c = Coupon::find($coupon_id);
         $user->getCoupon()->detach($coupon_id);
     }
 
@@ -62,7 +62,6 @@ class WeChatController extends BaseController
         if ($wxOrder['return_code'] != 'SUCCESS' ||
             $wxOrder['result_code'] != 'SUCCESS'
         ) {
-            dd($wxOrder);
         }
         //prepay_id
         $signature = $this->sign($wxOrder);

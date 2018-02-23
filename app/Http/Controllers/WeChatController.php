@@ -58,12 +58,9 @@ class WeChatController extends Controller
         $wxOrder =WxPayApi::unifiedOrder($wxOrderData);
         if ($wxOrder['return_code'] != 'SUCCESS' ||
             $wxOrder['result_code'] != 'SUCCESS'
-        )
-        {
-            Log::record($wxOrder, 'error');
-            Log::record('获取预支付订单失败', 'error');
+        ) {
+
         }
-        //prepay_id
         $signature = $this->sign($wxOrder);
         return $signature;
 
@@ -71,9 +68,6 @@ class WeChatController extends Controller
 
     private function sign($wxOrder)
     {
-
-        //  var_dump($wxOrder);
-
         $jsApiPayData = new WxPayJsApiPay();
         $jsApiPayData->SetAppid(env('wxAppID'));
         $jsApiPayData->SetTimeStamp((string)time());
