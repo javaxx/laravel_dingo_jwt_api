@@ -39,11 +39,30 @@ class CouponController extends BaseController
     public function follow(Request $request)
     {
         $user = Auth::user();
+        $isFollowd = Sharelist::where(['share_uid'=>$user->id, 'follow_uid' => $request->leader_id])->get();
+        $r =  $this->isFolloed($user->id, $request->leader_id);
+
+        if ($r) {
+            return ['status' => false,
+                'msg' => '不能加入队员的队伍',
+            ];
+        }
         $newFollow = new Sharelist();
         $newFollow->share_uid = $request->leader_id;
         $newFollow->follow_uid = $user->id;
         $newFollow->save();
-        return ['msg'=> 'ok'];
+        return ['status' => true,
+            'msg' => '加入成功',];
+    }
+
+    public function isFolloed( $folloow_id,$share_uid)
+    {
+      $r =   Sharelist::where(['share_uid'=>$folloow_id ,'follow_uid' =>$share_uid])->get();
+
+        if ($r->count()) {
+            return true;
+        }
+        return false;
     }
 
 }
