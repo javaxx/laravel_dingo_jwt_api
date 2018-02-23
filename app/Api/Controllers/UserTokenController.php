@@ -37,8 +37,9 @@ class UserTokenController extends BaseController
         if ($request->id) {
             $getUser = User::find($request->id);
             $self = $user == $getUser ? true : false;
+        }else{
+            $self = true;
         }
-        $self = true;
         if ($self){
             $followers = $user->getFollower;
             $new_num  = $user->getFollowerByStatus_0->count();
