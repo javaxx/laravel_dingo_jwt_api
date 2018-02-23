@@ -2,8 +2,10 @@
 
 namespace App\Api\Controllers;
 
+use App\Coupon;
 use App\Sharelist;
 use App\User;
+use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\App;
@@ -15,20 +17,23 @@ class CouponController extends BaseController
     {
         $user = Auth::user();
         $newFollower = $user->getFollowerByStatus_0;
-        $num =$newFollower->count();
+        $coupon_id = 1;
+        $num = $newFollower->count();
         $num = (int)floor($num / 5);
         $delFollowerMum = $num * 5;
-
         while ($num > 0) {
-           $user->getCoupon()->attach(1);
-           $num--;
+            $user->getCoupon()->attach($coupon_id);
+            $num--;
         }
-        //Sharelist::where(['status'=>l])
-        $a = Sharelist::where(['share_uid' => $user->id, 'status' => 0])->skip(0)->take($delFollowerMum)->update(['status' => 1]);
-//        $a = Sharelist::where(['share_uid' => $user->id, 'status' => 0])->limit($delFollowerMum)->update(['status' => 1]);
-//        dd($newFollower);
 
-     //   dd();
+        $a = Sharelist::where(['share_uid' => $user->id, 'status' => 0])->skip(0)->take($delFollowerMum)->update(['status' => 1]);
+        $c = Coupon::find($coupon_id);
+        if ($a) {
+            $num = (int)floor($a / 5);
+
+            return ['msg' => '恭喜你获取' .intval($num) . '张' .$c->description,
+            ];
+        }
     }
 
     public function follow(Request $request)

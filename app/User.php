@@ -17,7 +17,7 @@ class User extends Authenticatable
     //获取优惠券
     public function getCoupon()
     {
-        return $this->belongsToMany(\App\Coupon::class,'user_coupons','user_id','coupons_id');
+        return $this->belongsToMany(\App\Coupon::class,'user_coupons','user_id','coupons_id')->withTimestamps();
     }
     // 获取活动跟随者
     public function getFollower()

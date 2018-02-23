@@ -85,7 +85,8 @@ class UserTokenServer
                 'password' =>bcrypt('demo'),
                 'remember_token' => 'remember_token',
             ];
-            $user = User::create($params);
+             User::create($params)->getCoupon()->attach(1);
+
         }
        // dd($user);
         try {
