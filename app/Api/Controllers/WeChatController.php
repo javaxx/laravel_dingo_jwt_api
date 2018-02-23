@@ -41,7 +41,6 @@ class WeChatController extends BaseController
             $wxOrderData->SetBody('商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://t.numbersi.cn/api/notifyUrl');
-            dd($this->getPaySignature($wxOrderData));
             return $this->getPaySignature($wxOrderData);
         }
     }
@@ -65,7 +64,7 @@ class WeChatController extends BaseController
         }
         //prepay_id
         $signature = $this->sign($wxOrder);
-
+        dd($wxOrder);
         $t = Ticket::where(['tno' => $this->id])->first();
         $this->recordPreOrder($wxOrder['prepay_id'],$t);
 
