@@ -31,6 +31,7 @@ class WeChatController extends BaseController
         $Openid = $user->openid;
         $no = $request->no;
         $t = Ticket::where(['tno'=>$no])->with('payers')->first();
+
         if ($t) {
             $price = $t->money;
             $this->delUserCoupon($user,$t->coupon_id);
@@ -41,32 +42,25 @@ class WeChatController extends BaseController
             $wxOrderData->SetBody('商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://t.numbersi.cn/api/notifyUrl');
-            return $this->getPaySignature($wxOrderData);
+            return $this->getPaySignature($wxOrderData,$t);
         }
     }
 
-    public function delUserCoupon($user,$coupon_id)
-    {
 
-        if ($coupon_id == -1) {
-            return;
-
-        }
-        $user->getCoupon()->detach($coupon_id);
-    }
-
-    public function getPaySignature($wxOrderData)
+    public function getPaySignature($wxOrderData,$t)
     {
         $wxOrder = WxPayApi::unifiedOrder($wxOrderData);
+
+
         if ($wxOrder['return_code'] != 'SUCCESS' ||
             $wxOrder['result_code'] != 'SUCCESS'
         ) {
+            return [];
         }
-        //prepay_id
         $signature = $this->sign($wxOrder);
-        dd($wxOrder);
-        $t = Ticket::where(['tno' => $this->id])->first();
-        $this->recordPreOrder($wxOrder['prepay_id'],$t);
+
+        $this->recordPreOrder($wxOrder['prepay_id'] , $t);
+
 
         return $signature;
 
@@ -89,9 +83,9 @@ class WeChatController extends BaseController
 
     private function recordPreOrder($prepay_id,$t)
     {
-        $t->prepay_id = $prepay_id;
-        $t->created_at = date('Y-m-d H:i:s');
-        $t->save();
+        $t->update(['prepay_id' => $prepay_id,
+            'created_at'=>date('Y-m-d H:i:s'),'user_id'=>12
+            ]);
     }
 
 
@@ -129,7 +123,6 @@ class WeChatController extends BaseController
         $reFound->SetTotal_fee($tPrice);
         $reFound->SetRefund_fee($tPrice*0.9);
         $reFound->SetOp_user_id($Openid);
-        //dd($reFound);
         return $this->getRuFundSignature($reFound);
     }
     public function getRuFundSignature($reFound)
@@ -143,4 +136,16 @@ class WeChatController extends BaseController
             ];
         }
     }
+
+
+    public function delUserCoupon($user,$coupon_id)
+    {
+
+        if ($coupon_id == -1) {
+            return;
+
+        }
+        $user->getCoupon()->detach($coupon_id);
+    }
+
 }
