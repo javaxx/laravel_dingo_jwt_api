@@ -7,7 +7,7 @@
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/CouponController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="579">
+              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
               <folding>
                 <element signature="e#39#54#0#PHP" expanded="true" />
               </folding>
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTokenController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserTokenController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
+            <state relative-caret-position="28">
               <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding>
                 <element signature="e#6#83#0#PHP" expanded="true" />
@@ -253,13 +253,13 @@
         <option value="$PROJECT_DIR$/database/migrations/2018_02_23_122759_create_activities_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_02_23_123238_create_activities_coupons_table.php" />
         <option value="$PROJECT_DIR$/app/Activity.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/Api/Server/WxServer.php" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/WeChatController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/BannerController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/ParyerController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/CouponController.php" />
       </list>
     </option>
   </component>
@@ -519,14 +519,7 @@
       <workItem from="1519058577150" duration="5788000" />
       <workItem from="1519095819471" duration="11993000" />
       <workItem from="1519204576454" duration="11161000" />
-      <workItem from="1519222972931" duration="60277000" />
-    </task>
-    <task id="LOCAL-00084" summary="Token时间">
-      <created>1502427090581</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1502427090581</updated>
+      <workItem from="1519222972931" duration="60570000" />
     </task>
     <task id="LOCAL-00085" summary="Token时间">
       <created>1503584396359</created>
@@ -864,11 +857,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519397446353</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="修复退票">
+      <created>1519400990559</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1519400990559</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357803000" />
+    <option name="totallyTimeSpent" value="358096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1382,23 +1382,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/CouponController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding>
-            <element signature="e#39#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="28">
           <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding>
             <element signature="e#6#83#0#PHP" expanded="true" />
             <element signature="e#118#153#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <folding>
+            <element signature="e#39#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

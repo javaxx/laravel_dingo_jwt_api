@@ -43,6 +43,7 @@ class CouponController extends BaseController
         $newFollow->share_uid = $request->leader_id;
         $newFollow->follow_uid = $user->id;
         $newFollow->save();
+        return ['msg'=> 'ok'];
     }
 
 }
