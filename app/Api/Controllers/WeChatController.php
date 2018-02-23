@@ -39,7 +39,7 @@ class WeChatController extends BaseController
             $wxOrderData->SetOut_trade_no($no);
             $wxOrderData->SetTrade_type("JSAPI");
             $wxOrderData->SetTotal_fee($price * 100);
-            $wxOrderData->SetBody('订购商丘-张家港车票');
+            $wxOrderData->SetBody('商丘-张家港车票');
             $wxOrderData->SetOpenid($Openid);
             $wxOrderData->SetNotify_url('https://t.numbersi.cn/api/notifyUrl');
             return $this->getPaySignature($wxOrderData);
@@ -130,7 +130,7 @@ class WeChatController extends BaseController
         $reFound->SetOut_trade_no($out_trade_no);
         $reFound->SetOut_refund_no($ut_refund_no);
         $reFound->SetTotal_fee($tPrice);
-        $reFound->SetRefund_fee($tPrice);
+        $reFound->SetRefund_fee($tPrice*0.9);
         $reFound->SetOp_user_id($Openid);
         //dd($reFound);
         return $this->getRuFundSignature($reFound);
@@ -142,7 +142,8 @@ class WeChatController extends BaseController
         if ($r['return_code'] != 'SUCCESS' ||
             $r['result_code'] != 'SUCCESS'
         ) {
-            dd($r);
+            return ['msg' => $r['err_code_des'],
+            ];
         }
     }
 }
