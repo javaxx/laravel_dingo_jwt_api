@@ -34,12 +34,18 @@ class UserTokenController extends BaseController
     public function getUser(Request $request)
     {
         $user = Auth::user();
+
         if ($request->id) {
             $getUser = User::find($request->id);
-            $self = $user == $getUser ? true : false;
+            if ($getUser) {
+                $self = ($user == $getUser) ? true : false;
+            }
+            $self = true;
         }else{
+            $getUser = User::find($request->id);
             $self = true;
         }
+
         if ($self){
             $followers = $user->getFollower;
             $new_num  = $user->getFollowerByStatus_0->count();
@@ -49,7 +55,6 @@ class UserTokenController extends BaseController
                 'self'=>$self
                 ];
         }else{
-
             $followers = $getUser->getFollower;
             $new_num  = $getUser->getFollowerByStatus_0->count();
 
@@ -64,11 +69,4 @@ class UserTokenController extends BaseController
             ];
         }
     }
-
-    public function NotSelf()
-    {
-
-    }
-
-
 }

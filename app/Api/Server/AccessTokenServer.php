@@ -42,6 +42,8 @@ class AccessTokenServer
             ];
             $request= common::curl_post($url, $params);
             $request = json_decode($request,true);
+            Storage::disk('local')->put('request.txt', $request);
+
             if ($request['errcode'] == '40001'|| $request['errcode'] =="42001") {
                 return $this->getUrlToken();
             }else{
@@ -61,6 +63,7 @@ class AccessTokenServer
         $request = json_decode($request,true);
 
         Storage::disk('local')->put('AccessToken.txt', $request['access_token']);
+        Storage::disk('local')->put('1.txt', $request['access_token']);
 
         return $request['access_token'];
     }
