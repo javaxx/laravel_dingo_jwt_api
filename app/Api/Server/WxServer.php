@@ -27,6 +27,8 @@ class WxServer extends WxPayNotify
             $tno = $data['out_trade_no'];
             $token = $this->getToken($tno);
             $t = Ticket::where(['tno'=>$tno])->first();
+            Storage::disk('local')->put('t.txt',$t);
+
             if ($t) {
                 $t->update(['token'=>$token]);
                 $this->getQrCode($tno,$token);
