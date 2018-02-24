@@ -35,14 +35,13 @@ class TicketController extends BaseController
             if ($user->name==='AdminSi') {
                 //$price = 0.01;
             }
-            $user_id = Auth::id();
-             $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
+             $ts= Ticket::where(['user_id'=>$user->id,'token'=>''])->get();
             if ($ts->count()<5) {
                 $payer_id = $payerID;
                 $params = [
                     'token'=>'',
                     'tno' => $tno,
-                    'user_id' => $user_id,
+                    'user_id' =>$user->id,
                     'payer_id' => $payer_id,
                     'coupon_id' => $couponID,
                     'money' => $price,

@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="" />
-    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
+    <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="修复退票">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
     </list>
@@ -36,8 +36,8 @@
       <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            <state relative-caret-position="513">
+              <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#6#83#0#PHP" expanded="true" />
               </folding>
@@ -527,14 +527,7 @@
       <workItem from="1519095819471" duration="11993000" />
       <workItem from="1519204576454" duration="11161000" />
       <workItem from="1519222972931" duration="62491000" />
-      <workItem from="1519448777648" duration="10717000" />
-    </task>
-    <task id="LOCAL-00104" summary="Token时间">
-      <created>1514990868859</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1514990868859</updated>
+      <workItem from="1519448777648" duration="10947000" />
     </task>
     <task id="LOCAL-00105" summary="Token时间">
       <created>1514990962910</created>
@@ -872,11 +865,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519462733337</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="修复退票">
+      <created>1519463081722</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1519463081722</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370734000" />
+    <option name="totallyTimeSpent" value="370964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1378,8 +1378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+        <state relative-caret-position="513">
+          <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#6#83#0#PHP" expanded="true" />
           </folding>
