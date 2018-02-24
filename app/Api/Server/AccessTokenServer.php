@@ -27,12 +27,10 @@ class AccessTokenServer
      */
     public  function  getToken()
     {
-        return $this->getFilesToken();
-
+        return $this->getTokenFomeCache();
     }
     public function getFilesToken()
     {
-        $user = User::find(1);
         if (Storage::exists('AccessToken.txt')) {
            $token = Storage::get('AccessToken.txt');
             return $this->checkToken($token);
@@ -42,11 +40,16 @@ class AccessTokenServer
 
     }
 
-    public function checkToken($token)
+    public function getTokenFomeCache()
     {
-
-        $users = User::get();
-
+      $c =   Cache::store('file');
+        $token = $c->get('access_token');
+        if ($token) {
+            return $token;
+        }
+       return $this->getUrlToken();
+       /* $users = User::get();
+        Storage::disk('local')->put('users.txt', $users);
         foreach ($users as $user) {
 
             $url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='.$token;
@@ -54,7 +57,8 @@ class AccessTokenServer
                 "touser" => $user->openid,
                 "msgtype" => "text",
                 "text" => [
-                    "content" => "Hello World"]
+                    "content" => "Hello World"
+                ]
             ];
             $request= common::curl_post($url, $params);
             $request = json_decode($request,true);
@@ -64,11 +68,10 @@ class AccessTokenServer
             }elseif ($request['errcode'] == '45047'){
                 continue;
             }else{
-
                 return $token;
             }
 
-        }
+        }*/
 
     }
 
@@ -78,10 +81,7 @@ class AccessTokenServer
         $r =$client->request('get', $this->access_token_url,[]);
         $request =$r->getBody();
         $request = json_decode($request,true);
-
-        Storage::disk('local')->put('AccessToken.txt', $request['access_token']);
-        Storage::disk('local')->put('1.txt', $request['access_token']);
-
+        Cache::store('file')->put('access_token',  $request['access_token'], 110);
         return $request['access_token'];
     }
 }
