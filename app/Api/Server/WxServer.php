@@ -74,7 +74,7 @@ class WxServer extends WxPayNotify
                     "color" => "#173177"
                 ],
                 "keyword2" => [
-                    "value" => "123123",
+                    "value" => $t->no,
                     "color" => "#173177"
                 ],
                 "keyword3" => [
@@ -90,15 +90,11 @@ class WxServer extends WxPayNotify
                     "color" => "#173177"
                 ],
                 "keyword6" => [
-                    "value" => "150",
+                    "value" => $t->money,
                     "color" => "#173177"
                 ],
                 "keyword7" => [
                     "value" => "乘车旅途中如果遇到问题,请拨打13737028118",
-                    "color" => "#173177"
-                ],
-                "keyword8" => [
-                    "value" => "上车地点可以在小程序首页查看详细地图信息",
                     "color" => "#173177"
                 ],
             ],
@@ -107,8 +103,6 @@ class WxServer extends WxPayNotify
 
 
         $request = common::curl_post($url,$params);
-        Storage::disk('local')->put('url.txt', $url);
-        Storage::disk('local')->put('params.txt', $params);
 
     }
 

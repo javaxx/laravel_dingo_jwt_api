@@ -13,9 +13,9 @@
 
 Route::get('/', function () {
     $w = new \App\Api\Server\WxServer();
+    Cache::pull('access_token');
     $t = \App\Ticket::find(130);
     $w->senMoMessage($t);
-
     //return '404';
 });
 Route::get('/refound', 'WeChatController@refound');

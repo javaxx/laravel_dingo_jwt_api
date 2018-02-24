@@ -46,7 +46,7 @@ class AccessTokenServer
       $c =   Cache::store('file');
         $token = $c->get('access_token');
         if ($token) {
-            return $this->checkToken($token);
+            return $token;
         }
        return $this->getUrlToken();
 
