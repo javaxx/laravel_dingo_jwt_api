@@ -36,6 +36,7 @@ class TicketController extends BaseController
                 //$price = 0.01;
             }
             $user_id = Auth::id();
+            dd($user_id);
            $ts= Ticket::where(['user_id'=>$user_id,'token'=>''])->get();
             if ($ts->count()<5) {
                 $payer_id = $payerID;
@@ -133,7 +134,8 @@ class TicketController extends BaseController
         });
         if ($Ticket->isEmpty()) {
             return ['status' => false, 'tickets' => $Ticket,'roles'=>$roles,'coupons'=>$user->getCoupon()->get()];
-        }
+        }dd();
+
         return ['status' => true, 'tickets' => $Ticket,'roles'=>$roles,'coupons'=>$user->getCoupon()->get()];
     }
 
