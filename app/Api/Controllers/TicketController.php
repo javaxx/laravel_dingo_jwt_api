@@ -124,15 +124,17 @@ class TicketController extends BaseController
         $user = Auth::user();
         $roles = $user->roles;
         $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('updated_at')->get()->reject(function ($item, $key) {
+            $outTime = 2 ;
             $item->times =strtotime( $item->updated_at);
-            $item->expiredTimes = $item->times - 86400;
+            $item->expiredTimes = $item->times - 86400*$outTime;
+            $item->outTime = $outTime;
             if ($item->token == '') {
                 return $item;
             }
         });
         if ($Ticket->isEmpty()) {
             return ['status' => false, 'tickets' => $Ticket,'roles'=>$roles,'coupons'=>$user->getCoupon()->get()];
-        }dd();
+        }
 
         return ['status' => true, 'tickets' => $Ticket,'roles'=>$roles,'coupons'=>$user->getCoupon()->get()];
     }

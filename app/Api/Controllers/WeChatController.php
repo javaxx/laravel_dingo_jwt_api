@@ -121,19 +121,27 @@ class WeChatController extends BaseController
         $reFound->SetOut_trade_no($out_trade_no);
         $reFound->SetOut_refund_no($ut_refund_no);
         $reFound->SetTotal_fee($tPrice);
-        $reFound->SetRefund_fee($tPrice*0.9);
+        $reFound->SetRefund_fee($tPrice);
         $reFound->SetOp_user_id($Openid);
-        return $this->getRuFundSignature($reFound);
+         $this->getRuFundSignature($reFound,$t);
     }
-    public function getRuFundSignature($reFound)
+    public function getRuFundSignature($reFound,$t)
     {
         $r = WxPayApi::refund($reFound);
 
         if ($r['return_code'] != 'SUCCESS' ||
             $r['result_code'] != 'SUCCESS'
         ) {
-            return ['msg' => $r['err_code_des'],
+
+            return [
+                'status' => false,
+                'msg' => $r['err_code_des'],
             ];
+        }else{
+            $r= $t->update(['status' => 2]);
+            if ($r) {
+                return ['status'=>true,'msg'=>'ok'];
+            }
         }
     }
 
