@@ -84,7 +84,7 @@ class WeChatController extends BaseController
     private function recordPreOrder($prepay_id,$t)
     {
         $t->update(['prepay_id' => $prepay_id,
-            'created_at'=>date('Y-m-d H:i:s'),'user_id'=>12
+            'created_at'=>date('Y-m-d H:i:s')
             ]);
     }
 
@@ -102,33 +102,49 @@ class WeChatController extends BaseController
 // 退款
     public function refund(Request $request)
     {
+
         $user = Auth::user();
         $Openid = $user->openid;
         $out_trade_no = $request->tno;
+
         if ($out_trade_no) {
             $t = Ticket::where(['tno'=>$out_trade_no])->first();
             if (!$t) {
-                return '所查询的订单不存在';
+
+                return [
+                    'status' => false,
+                    'msg' => '所查询的订单不存在',
+                ];
             }
             if($t->status != 0){
-                return '所查询的订单不可以退款';
+                return [
+                    'status' => false,
+                    'msg' => '所查询的订单不可以退款',
+                ];
             };
             $tPrice = $t->money*100;
         }
-
+        $refund_fee = $tPrice;
+        if ($request->outTime){
+            $refund_fee = round(0.9 * $tPrice,2) ;
+        }
         $ut_refund_no = 'ABC'.time();
         $reFound = new  WxPayRefund();
         $reFound->SetOut_trade_no($out_trade_no);
         $reFound->SetOut_refund_no($ut_refund_no);
         $reFound->SetTotal_fee($tPrice);
-        $reFound->SetRefund_fee($tPrice);
+        $reFound->SetRefund_fee($refund_fee);
         $reFound->SetOp_user_id($Openid);
-         $this->getRuFundSignature($reFound,$t);
+       return  $this->getRuFundSignature($reFound,$t);
     }
     public function getRuFundSignature($reFound,$t)
     {
-        $r = WxPayApi::refund($reFound);
-
+//        $r = WxPayApi::refund($reFound);
+        $r= $t->update(['status' => 0]);
+        if ($r) {
+            return ['status'=>true,'msg'=>'退票成功'];
+        }
+        $r = [];
         if ($r['return_code'] != 'SUCCESS' ||
             $r['result_code'] != 'SUCCESS'
         ) {
@@ -138,9 +154,9 @@ class WeChatController extends BaseController
                 'msg' => $r['err_code_des'],
             ];
         }else{
-            $r= $t->update(['status' => 2]);
+            $r= $t->update(['status' => 0]);
             if ($r) {
-                return ['status'=>true,'msg'=>'ok'];
+                return ['status'=>true,'msg'=>'退票成功'];
             }
         }
     }
