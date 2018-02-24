@@ -14,7 +14,6 @@
 Route::get('/', function () {
   $c =   Cache::store('file');
     //$c->put('key', 'value1', 1);
-    dd($c->get('key'));
     dd($c);
 });
 Route::get('/refound', 'WeChatController@refound');
