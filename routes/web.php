@@ -12,9 +12,7 @@
 //
 
 Route::get('/', function () {
-  $c =   Cache::store('file');
-    //$c->put('key', 'value1', 1);
-    dd($c);
+    return '404';
 });
 Route::get('/refound', 'WeChatController@refound');
 Route::get('/wechat','WeChatController@index');
