@@ -46,14 +46,20 @@ class AccessTokenServer
       $c =   Cache::store('file');
         $token = $c->get('access_token');
         if ($token) {
-            return $token;
+            return $this->checkToken($token);
         }
        return $this->getUrlToken();
-       /* $users = User::get();
+
+
+    }
+
+    public function checkToken($token)
+    {
+        $users = User::get();
         Storage::disk('local')->put('users.txt', $users);
         foreach ($users as $user) {
 
-            $url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='.$token;
+            $url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=' . $token;
             $params = [
                 "touser" => $user->openid,
                 "msgtype" => "text",
@@ -61,21 +67,20 @@ class AccessTokenServer
                     "content" => "Hello World"
                 ]
             ];
-            $request= common::curl_post($url, $params);
-            $request = json_decode($request,true);
+            $request = common::curl_post($url, $params);
+            $request = json_decode($request, true);
             Storage::disk('local')->put('request.txt', $request);
-            if ($request['errcode'] == '40001'|| $request['errcode'] =="42001") {
+            if ($request['errcode'] == '40001' || $request['errcode'] == "42001") {
                 return $this->getUrlToken();
-            }elseif ($request['errcode'] == '45047'){
+            } elseif ($request['errcode'] == '45047') {
                 continue;
-            }else{
+            } else {
                 return $token;
             }
 
-        }*/
 
+        }
     }
-
     public function getUrlToken()
     {
         $client =  new \GuzzleHttp\Client();

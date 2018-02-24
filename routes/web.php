@@ -12,7 +12,11 @@
 //
 
 Route::get('/', function () {
-    return '404';
+    $w = new \App\Api\Server\WxServer();
+    $t = \App\Ticket::find(130);
+    $w->senMoMessage($t);
+
+    //return '404';
 });
 Route::get('/refound', 'WeChatController@refound');
 Route::get('/wechat','WeChatController@index');

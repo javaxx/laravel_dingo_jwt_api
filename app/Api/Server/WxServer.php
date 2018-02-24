@@ -28,13 +28,11 @@ class WxServer extends WxPayNotify
             $token = $this->getToken($tno);
             $t = Ticket::where(['tno'=>$tno])->first();
             Storage::disk('local')->put('t.txt',$t);
-
             if ($t) {
                 $t->update(['token'=>$token]);
                 $this->getQrCode($tno,$token);
                 $this->senMoMessage($t);
                 Storage::disk('local')->put('file.txt',$t);
-
             }else{
                 Storage::disk('local')->put('file.txt',' 没有 ');
             }
@@ -95,19 +93,20 @@ class WxServer extends WxPayNotify
                     "value" => "150",
                     "color" => "#173177"
                 ],
-                "keyword6" => [
+                "keyword7" => [
                     "value" => "乘车旅途中如果遇到问题,请拨打13737028118",
                     "color" => "#173177"
                 ],
-                "keyword6" => [
+                "keyword8" => [
                     "value" => "上车地点可以在小程序首页查看详细地图信息",
                     "color" => "#173177"
                 ],
             ],
 
         ];
+
+
         $request = common::curl_post($url,$params);
-        Storage::disk('local')->put('request.txt', $request);
         Storage::disk('local')->put('url.txt', $url);
         Storage::disk('local')->put('params.txt', $params);
 
