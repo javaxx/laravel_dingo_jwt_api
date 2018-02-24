@@ -25,7 +25,6 @@ class CouponController extends BaseController
             $user->getCoupon()->attach($coupon_id);
             $num--;
         }
-
         $a = Sharelist::where(['share_uid' => $user->id, 'status' => 0])->skip(0)->take($delFollowerMum)->update(['status' => 1]);
         $c = Coupon::find($coupon_id);
         if ($a) {
@@ -44,7 +43,7 @@ class CouponController extends BaseController
 
         if ($r) {
             return ['status' => false,
-                'msg' => '不能加入队员的队伍',
+                'msg' => '他是你的队员',
             ];
         }
         $newFollow = new Sharelist();
