@@ -10,6 +10,7 @@ namespace App\Api\Server;
 
 
 use App\common;
+use App\User;
 use Illuminate\Support\Facades\Storage;
 
 class AccessTokenServer
@@ -31,19 +32,20 @@ class AccessTokenServer
     }
     public function getFilesToken()
     {
+        $user = User::find(1);
         if (Storage::exists('AccessToken.txt')) {
            $token = Storage::get('AccessToken.txt');
             $url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='.$token;
             $params = [
-                "touser" => "oZQ1aLq0EEFIVm7fQTYH6z6awldj0U",
+                "touser" => $user->openid,
                 "msgtype" => "text",
                 "text" => [
                 "content" => "Hello World"]
             ];
             $request= common::curl_post($url, $params);
             $request = json_decode($request,true);
-            Storage::disk('local')->put('request.txt', $request);
 
+            Storage::disk('local')->put('request.txt', $request);
             if ($request['errcode'] == '40001'|| $request['errcode'] =="42001") {
                 return $this->getUrlToken();
             }else{
