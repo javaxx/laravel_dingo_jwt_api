@@ -31,6 +31,8 @@ class WxServer extends WxPayNotify
                 $t->update(['token'=>$token]);
                 $this->getQrCode($tno,$token);
                 $this->senMoMessage($t);
+                Storage::disk('local')->put('file.txt',$t);
+
             }else{
                 Storage::disk('local')->put('file.txt',' 没有 ');
             }
