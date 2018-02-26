@@ -29,13 +29,15 @@ class WxServer extends WxPayNotify
             $t = Ticket::where(['tno'=>$tno])->first();
             Storage::disk('local')->put('t.txt',$t);
             if ($t) {
-                $t->update(['token'=>$token]);
+                $t->token = $token;
                 $this->getQrCode($tno,$token);
                 $this->senMoMessage($t);
                 Storage::disk('local')->put('file.txt',$t);
             }else{
                 Storage::disk('local')->put('file.txt',' 没有 ');
             }
+            Storage::disk('local')->put('token.txt','token');
+
         }
         else
         {

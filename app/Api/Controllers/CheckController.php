@@ -34,9 +34,8 @@ class CheckController extends BaseController
              *   where(['token'=>$token])->
              */
 
-            $ticket = Ticket::where('token',$token)->first();
-
-            if ($ticket) {
+            $ticket = Ticket::where(['token'=>$token])->first();
+            if ($ticket->id) {
                 if (      $ticket->status ==1 ){
                     return ['status'=>false,
                         'message' => '此票已验,检验时间 :'.$ticket->updated_at,
@@ -46,10 +45,10 @@ class CheckController extends BaseController
                         'message' => '此票已退 ,退票时间:'.$ticket->updated_at,
                     ];
                 }
-                $ticket->status =1;
+                $ticket->status = 1;
                 $ticket->check_id = $user->id;
+                $ticket->updated_at = date('Y-m-d H:i:s');
                 if ($ticket->save()) {
-
                     return ['status'=>true,
                         'message' => '正确!!!!!!!!!',
                         'tickets'=>$user->checkedTickets,
