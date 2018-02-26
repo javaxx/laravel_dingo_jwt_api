@@ -83,9 +83,7 @@ class UserTokenServer
         $openid = $wxResult['openid'];
        // $OpenId = new Openid;
         //检验openid 是否存在, 是获取user,生成token 否就存入OpenID
-
         $user = User::where('openid',$openid)->first();
-
         if($user){
 
         }else{
@@ -99,9 +97,7 @@ class UserTokenServer
                 'remember_token' => 'remember_token',
             ];
              User::create($params)->getCoupon()->attach(1);
-
         }
-       // dd($user);
         try {
             // attempt to verify the credentials and create a token for the user
             // dd(JWTAuth::attempt($credentials));
@@ -113,11 +109,7 @@ class UserTokenServer
             // something went wrong whilst attempting to encode the token
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-
-        // all good so return the token
         return response()->json(compact('token'));
-
-      //  return $s;
 
     }
 

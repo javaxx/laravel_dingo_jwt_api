@@ -139,13 +139,11 @@ class WeChatController extends BaseController
     }
     public function getRuFundSignature($reFound,$t)
     {
-//        $r = WxPayApi::refund($reFound);
-        $r= $t->update(['status' => 0]);
-        $r = [];
+
+        $r = WxPayApi::refund($reFound);
         if ($r['return_code'] != 'SUCCESS' ||
             $r['result_code'] != 'SUCCESS'
         ) {
-
             return [
                 'status' => false,
                 'msg' => $r['err_code_des'],
@@ -159,15 +157,11 @@ class WeChatController extends BaseController
         }
     }
 
-
     public function delUserCoupon($user,$coupon_id)
     {
-
         if ($coupon_id == -1) {
             return;
-
         }
         $user->getCoupon()->detach($coupon_id);
     }
-
 }

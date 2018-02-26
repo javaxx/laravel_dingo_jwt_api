@@ -106,8 +106,6 @@ class WxServer extends WxPayNotify
             ],
 
         ];
-
-
         $request = common::curl_post($url,$params);
 
     }
