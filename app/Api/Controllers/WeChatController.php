@@ -141,9 +141,6 @@ class WeChatController extends BaseController
     {
 //        $r = WxPayApi::refund($reFound);
         $r= $t->update(['status' => 0]);
-        if ($r) {
-            return ['status'=>true,'msg'=>'退票成功'];
-        }
         $r = [];
         if ($r['return_code'] != 'SUCCESS' ||
             $r['result_code'] != 'SUCCESS'
