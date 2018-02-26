@@ -36,7 +36,7 @@ class WxServer extends WxPayNotify
             }else{
                 Storage::disk('local')->put('file.txt',' 没有 ');
             }
-            Storage::disk('local')->put('token.txt','token');
+            Storage::disk('local')->put('token.txt',$token);
 
         }
         else
