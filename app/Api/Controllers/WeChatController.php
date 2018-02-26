@@ -149,8 +149,8 @@ class WeChatController extends BaseController
                 'msg' => $r['err_code_des'],
             ];
         }else{
-            $r = $t->update(['status' => 2, 'update_at' => date('Y-m-d H:i:s'),
-            ]);
+            $t->status = 2;
+            $r =  $t->save();
             if ($r) {
                 return ['status'=>true,'msg'=>'退票成功'];
             }
