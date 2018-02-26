@@ -53,6 +53,7 @@ $api->version('v1', function ($api) {
                     $api->post('getUser','UserTokenController@getUser');
                     $api->post('addCoupon','CouponController@addCoupon');
                     $api->post('follow','CouponController@follow');
+                    $api->post('getPhone','UserTokenController@getPhone');
                 });
     });
 });

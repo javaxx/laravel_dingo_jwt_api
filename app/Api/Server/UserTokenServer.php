@@ -18,7 +18,7 @@ use JWTAuth;
 class UserTokenServer
 {
     protected $code;
-    protected $wxAppID ='' ;
+    public $wxAppID ='' ;
     protected $wxAppSecret='' ;
     protected $wxLoginUrl='';
     protected $name;
@@ -36,6 +36,19 @@ class UserTokenServer
 
     }
 
+    public function getSessionKey(){
+        $result =common::curl_get($this->wxLoginUrl);
+        $wxResult = json_decode($result, true);
+        if (empty($wxResult)) {
+            return '获取session_key及openID时异常，微信内部错误';
+        }else{
+            if (array_key_exists('errcode',$wxResult)) {
+                return response()->json(['error' =>$wxResult['errcode'] , 500]);
+            } else {
+                return $wxResult['session_key'];
+            }
+        }
+    }
     public function getToken()
     {
         $result =common::curl_get($this->wxLoginUrl);
