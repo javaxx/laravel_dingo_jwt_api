@@ -29,9 +29,10 @@ class WxServer extends WxPayNotify
             $t = Ticket::where(['tno'=>$tno])->first();
             Storage::disk('local')->put('t.txt',$t);
             if ($t) {
+                Storage::disk('local')->put('t11.txt',$t);
+
                 $t->token = $token;
-                $t->update(['token' => $token, 'create_at' => date('Y-m-d H:i:s'),
-                ]);
+                Storage::disk('local')->put('t22.txt',$t);
                 $this->getQrCode($tno,$token);
                 $this->senMoMessage($t);
                 Storage::disk('local')->put('file.txt',$t);
