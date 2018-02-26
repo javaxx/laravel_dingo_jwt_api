@@ -30,7 +30,8 @@ class WxServer extends WxPayNotify
             Storage::disk('local')->put('t.txt',$t);
             if ($t) {
                 $t->token = $token;
-                $t->save();
+                $t->update(['token' => $token, 'create_at' => date('Y-m-d H:i:s'),
+                ]);
                 $this->getQrCode($tno,$token);
                 $this->senMoMessage($t);
                 Storage::disk('local')->put('file.txt',$t);
