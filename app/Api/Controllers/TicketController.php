@@ -123,7 +123,8 @@ class TicketController extends BaseController
     {
         $user = Auth::user();
         $roles = $user->roles;
-        $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')-> orderBy('status', 'asc')->latest('created_at')->get()->reject(function ($item, $key) {
+        //-> orderBy('status', 'asc')
+        $Ticket= Ticket::where(['user_id'=> $user->id])->with('payers')->latest('created_at')->get()->reject(function ($item, $key) {
             $outTime = 2 ;
             $item->times =strtotime( $item->created_at);
             $item->expiredTimes = $item->times - 86400*$outTime;
