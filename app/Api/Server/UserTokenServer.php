@@ -53,26 +53,16 @@ class UserTokenServer
     {
         $result =common::curl_get($this->wxLoginUrl);
 
-        //https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
-//        https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
-//        $uerinfo_url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token=7_9GbAY4u0aLcskmtN4EPD_0xfkvVLrxmaol7Ty3-4nupwsKB3TOFECrtFcHA4JWurso-chdqHhks179pXk1M7PHUEpS04mEaoGbsjPfNGlBu-olvB2_BKmrTByyuyMRqiHs2ADTNMvcPttDq-BKLiAEAJST&openid=$10$BLki484vSnTNslIBUiBkXO/YycPda5rR7f6c9KLZ6E732tcXVG7ki&lang=zh_CN';
-//        $result =common::curl_get($uerinfo_url);
-
-       // $request = Request::create($this->wxLoginUrl, 'GET');
-        //dd($request->appid);
-
-        /*
-          $wxResult = json_decode($result, true);
-        if (empty($wxResult))
-         */
         $wxResult = json_decode($result, true);
         if (empty($wxResult)) {
-            return '获取session_key及openID时异常，微信内部错误';
+            return response()->json(['msg' =>'获取session_key及openID时异常，微信内部错误' , 500]);
+
         }else{
             if (array_key_exists('errcode',$wxResult)) {
-                return response()->json(['error' =>$wxResult['errcode'] , 500]);
+                return response()->json(['error' =>$wxResult['errcode'],'msg'=>$wxResult['errmsg']],500);
             } else {
                 return $this->grantToken($wxResult);
+
             }
         }
     }
@@ -109,8 +99,7 @@ class UserTokenServer
             // something went wrong whilst attempting to encode the token
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-        return response()->json(compact('token'));
-
+        return response()->json(['token' => $token,'msg'=>'登陆成功'],200,['asd'=>'asd']);
     }
 
 };

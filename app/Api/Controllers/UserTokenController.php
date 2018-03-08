@@ -26,8 +26,8 @@ class UserTokenController extends BaseController
     {
         $data = $request->only(['code', 'name', 'avatarUrl']);
         $ut = new UserTokenServer($data['code'], $data['name'], $data['avatarUrl']);
-        $token = $ut->getToken();
-        return $token;
+//        $token = $ut->getToken();
+        return $ut->getToken();
     }
 
     public function getUser(Request $request)

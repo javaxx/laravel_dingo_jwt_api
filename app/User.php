@@ -14,6 +14,12 @@ class User extends Authenticatable
         return $this->hasMany(\App\Ticket::class, 'check_id', 'id')->with('payers')->latest('updated_at')->whereDate('updated_at',date('y-m-d',time()));
     }
 
+    public function tickets()
+    {
+        return $this->hasMany(\App\Ticket::class, 'user_id', 'id')->with('payers')->latest('created_at');
+
+    }
+
     //获取优惠券
     public function getCoupon()
     {
