@@ -33,30 +33,18 @@ class UserTokenController extends BaseController
     public function getUser(Request $request)
     {
         $user = Auth::user();
-
-        if ($request->id) {
-            $getUser = User::find($request->id);
-            if ($getUser) {
-                $self = ($user == $getUser) ? true : false;
-            }
-            $self = true;
-        } else {
-            $getUser = User::find($request->id);
-            $self = true;
-        }
-
-        if ($self) {
+        $getUser = User::find($request->id);
+        if ($getUser == $user || $getUser== null) {
             $followers = $user->getFollower;
             $new_num = $user->getFollowerByStatus_0->count();
             return ['user' => $user,
                 'followers' => $followers,
                 'new_num' => $new_num,
-                'self' => $self
+                'self' => true
             ];
-        } else {
+        }else{
             $followers = $getUser->getFollower;
             $new_num = $getUser->getFollowerByStatus_0->count();
-
             return [
                 'leader' => $getUser,
                 'new_num' => $new_num,
@@ -64,10 +52,11 @@ class UserTokenController extends BaseController
                 'my_leader' => $user->getLeader,
                 'user' => $user,
                 'isFollower' => Sharelist::isFollower($user->id),
-                'self' => $self
+                'self' => false
             ];
         }
-    }
+
+       }
 
     public function getPhone(Request $request)
     {
