@@ -9,9 +9,12 @@ class User extends Authenticatable
 
     protected $guarded = [];
 
-    public function checkedTickets()
+    public function checkedTickets($date = '' )
     {
-        return $this->hasMany(\App\Ticket::class, 'check_id', 'id')->with('payers')->latest('updated_at')->whereDate('updated_at',date('y-m-d',time()));
+        if ($date ==''){
+            $date  =   date('y-m-d', time());
+        }
+        return $this->hasMany(\App\Ticket::class, 'check_id', 'id')->with('payers')->latest('updated_at')->whereDate('updated_at',$date)->get();
     }
 
     public function tickets()

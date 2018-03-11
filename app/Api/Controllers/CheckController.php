@@ -17,9 +17,12 @@ class CheckController extends BaseController
 {
 
 
-    public function getChecked()
+    public function getChecked(Request $request)
     {
-        return ['status' => true, 'tickets' => Auth::user()->checkedTickets];
+        $date = $request->date;
+        $tickets = Auth::user()->checkedTickets($date);
+        $moneyCount = $tickets->sum('money');
+        return ['status' => true, 'tickets' =>$tickets ,'moneyCount'=>$moneyCount];
     }
     public function checkTicket(Request $request)
     {
@@ -47,7 +50,6 @@ class CheckController extends BaseController
                 }
                 $ticket->status = 1;
                 $ticket->check_id = $user->id;
-                $ticket->updated_at = date('Y-m-d H:i:s');
                 if ($ticket->save()) {
                     return ['status'=>true,
                         'message' => '正确!!!!!!!!!',

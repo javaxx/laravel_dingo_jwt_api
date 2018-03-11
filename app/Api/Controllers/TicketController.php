@@ -176,6 +176,7 @@ class TicketController extends BaseController
     public function delTicket(Request $request)
     {
         $id = $request->id;
+
         if ($id) {
             $result = Ticket::destroy($id);
 
