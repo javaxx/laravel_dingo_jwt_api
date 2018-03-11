@@ -70,11 +70,13 @@ class UserTokenController extends BaseController
 
             if ($errCode == 0) {
                 $user->updata(['phoneNumber'=>$data->phoneNumber]);
-                $this->response()->json(['phoneNumber' => $data->phoneNumber,]);
+             return   $this->response()->json(['status'=>true,'phoneNumber' => $data->phoneNumber,]);
             } else {
-                print($errCode . "\n");
+                return  $this->response()->json(['status'=>true,'errCode' =>$errCode]);
             }
         }
+        return   $this->response()->json(['status'=>true,'phoneNumber' => $user->phoneNumber,]);
+
 
 
 
