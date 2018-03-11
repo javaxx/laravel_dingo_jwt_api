@@ -68,9 +68,10 @@ class UserTokenController extends BaseController
             $pc = new WXBizDataCrypt($ut->wxAppID, $sessionKey);
             $errCode = $pc->decryptData($encryptedData, $iv, $data);
             if ($errCode == 0) {
+                $data = json_decode($data, true);
                 $user->phoneNumber =  $data['phoneNumber'];
                 $user->save();
-                return response()->json(['status' => true, 'phoneNumber' => $data['phoneNumber'],]);
+                return response()->json(['status' => true, 'userinfo' => $user,]);
             } else {
                 return response()->json(['status' => true, 'errCode' => $errCode]);
             }
