@@ -67,6 +67,7 @@ class UserTokenController extends BaseController
 
             $pc = new WXBizDataCrypt($ut->wxAppID, $sessionKey);
             $errCode = $pc->decryptData($encryptedData, $iv, $data);
+            dd($data);
 
             if ($errCode == 0) {
                 dd($data);
