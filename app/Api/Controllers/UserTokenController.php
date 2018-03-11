@@ -7,8 +7,6 @@
  */
 
 namespace App\Api\Controllers;
-
-
 use App\Api\Server\UserTokenServer;
 use App\Sharelist;
 use App\User;
@@ -23,7 +21,6 @@ class UserTokenController extends BaseController
     {
         $data = $request->only(['code', 'name', 'avatarUrl']);
         $ut = new UserTokenServer($data['code'], $data['name'], $data['avatarUrl']);
-//        $token = $ut->getToken();
         return $ut->getToken();
     }
 

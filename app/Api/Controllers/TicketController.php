@@ -129,8 +129,6 @@ class TicketController extends BaseController
          * 2 已使用
          *
          */
-
-
         $Ticket = Ticket::where(['user_id' => $user->id])->with('payers')->latest('created_at')->get()->reject(function ($item, $key) {
             $outTime = 2;
             $item->times = strtotime($item->created_at);
