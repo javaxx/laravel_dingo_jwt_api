@@ -31,7 +31,7 @@ class UserTokenController extends BaseController
     {
         $user = Auth::user();
         $getUser = User::find($request->id);
-        if ($getUser == $user || $getUser== null) {
+        if ($getUser == $user || $getUser == null) {
             $followers = $user->getFollower;
             $new_num = $user->getFollowerByStatus_0->count();
             return ['user' => $user,
@@ -39,7 +39,7 @@ class UserTokenController extends BaseController
                 'new_num' => $new_num,
                 'self' => true
             ];
-        }else{
+        } else {
             $followers = $getUser->getFollower;
             $new_num = $getUser->getFollowerByStatus_0->count();
             return [
@@ -53,7 +53,7 @@ class UserTokenController extends BaseController
             ];
         }
 
-       }
+    }
 
     public function getPhone(Request $request)
     {
@@ -66,19 +66,16 @@ class UserTokenController extends BaseController
             $sessionKey = $ut->getSessionKey();
 
             $pc = new WXBizDataCrypt($ut->wxAppID, $sessionKey);
-            $errCode = $pc->decryptData($encryptedData, $iv, $data );
+            $errCode = $pc->decryptData($encryptedData, $iv, $data);
 
             if ($errCode == 0) {
-                $user->updata(['phoneNumber'=>$data->phoneNumber]);
-             return   $this->response()->json(['status'=>true,'phoneNumber' => $data->phoneNumber,]);
+                $user->updata(['phoneNumber' => $data->phoneNumber]);
+                return response()->json(['status' => true, 'phoneNumber' => $data->phoneNumber,]);
             } else {
-                return  $this->response()->json(['status'=>true,'errCode' =>$errCode]);
+                return response()->json(['status' => true, 'errCode' => $errCode]);
             }
         }
-        return   $this->response()->json(['status'=>true,'phoneNumber' => $user->phoneNumber,]);
-
-
-
+        return response()->json(['status' => true, 'phoneNumber' => $user->phoneNumber,]);
 
 
     }
