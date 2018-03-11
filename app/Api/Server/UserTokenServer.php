@@ -33,7 +33,6 @@ class UserTokenServer
         $this->wxLoginUrl = sprintf(
             env('wxLoginUrl'),
             $this->wxAppID, $this->wxAppSecret, $this->code);
-
     }
 
     public function getSessionKey(){

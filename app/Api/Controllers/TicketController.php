@@ -34,32 +34,26 @@ class TicketController extends BaseController
             Storage::disk('local')->put('file.txt', $user);
             $priceData = $this->preferential_price($couponID);
 
-            $ts = Ticket::where(['user_id' => $user->id, 'token' => ''])->get();
-            if ($ts->count() < 200) {
-                $payer_id = $payerID;
-                $params = [
-                    'token' => '',
-                    'tno' => $tno,
-                    'user_id' => $user->id,
-                    'payer_id' => $payer_id,
-                    'coupon_id' => $couponID,
-                    'money' => $priceData['money'],
-                    'price' => $priceData['price'],
-                ];
-                $t = Ticket::create($params);
-                if ($t) {
-                    return response()->json([
-                        'ticket' => $t,
-                        'message' => '下单成功,请支付',
-                        'status' => true,
-                    ], 222);
-                }
-            } else {
+            Ticket::where(['user_id' => $user->id, 'token' => ''])->delete();
+            $payer_id = $payerID;
+            $params = [
+                'token' => '',
+                'tno' => $tno,
+                'user_id' => $user->id,
+                'payer_id' => $payer_id,
+                'coupon_id' => $couponID,
+                'money' => $priceData['money'],
+                'price' => $priceData['price'],
+            ];
+            $t = Ticket::create($params);
+            if ($t) {
                 return response()->json([
-                    'status' => false,
-                    'message' => '已超5个订单没有支付,请处理'
-                ], 404);
+                    'ticket' => $t,
+                    'message' => '下单成功,请支付',
+                    'status' => true,
+                ], 222);
             }
+
         }
 
     }
