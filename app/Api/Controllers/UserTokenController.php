@@ -10,14 +10,11 @@ namespace App\Api\Controllers;
 
 
 use App\Api\Server\UserTokenServer;
-use App\Openid;
 use App\Sharelist;
 use App\User;
 use app\Wechat\WXBizDataCrypt;
-use Illuminate\Http\Request;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use Auth;
+use Illuminate\Http\Request;
 
 
 class UserTokenController extends BaseController
@@ -61,20 +58,26 @@ class UserTokenController extends BaseController
     public function getPhone(Request $request)
     {
         $user = Auth::user();
-        $iv = $request->iv;
-        $encryptedData = $request->encryptedData;
-        $code = $request->code;
-        $ut = new UserTokenServer($code);
-        $sessionKey = $ut->getSessionKey();
+        if (!$user->phoneNumber) {
+            $iv = $request->iv;
+            $encryptedData = $request->encryptedData;
+            $code = $request->code;
+            $ut = new UserTokenServer($code);
+            $sessionKey = $ut->getSessionKey();
 
-        $pc = new WXBizDataCrypt($ut->wxAppID, $sessionKey);
-        $errCode = $pc->decryptData($encryptedData, $iv, $data );
+            $pc = new WXBizDataCrypt($ut->wxAppID, $sessionKey);
+            $errCode = $pc->decryptData($encryptedData, $iv, $data );
 
-        if ($errCode == 0) {
-            print($data . "\n");
-        } else {
-            print($errCode . "\n");
+            if ($errCode == 0) {
+                $user->updata(['phoneNumber'=>$data->phoneNumber]);
+                $this->response()->json(['phoneNumber' => $data->phoneNumber,]);
+            } else {
+                print($errCode . "\n");
+            }
         }
+
+
+
 
     }
 }
