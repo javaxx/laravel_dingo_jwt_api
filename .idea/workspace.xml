@@ -7,7 +7,7 @@
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="New changelist" />
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/ParyerController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/ParyerController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,15 +35,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserTokenController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserTokenController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+            <state relative-caret-position="1045">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="e#6#83#0#PHP" expanded="true" />
                 <element signature="e#118#153#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParyerController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/ParyerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="543">
+              <caret line="57" column="89" lean-forward="false" selection-start-line="57" selection-start-column="89" selection-end-line="57" selection-end-column="89" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,16 +127,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
               <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BannerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/BannerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="108" lean-forward="false" selection-start-line="57" selection-start-column="108" selection-end-line="57" selection-end-column="108" />
               <folding />
             </state>
           </provider>
@@ -246,7 +246,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2018_02_23_123238_create_activities_coupons_table.php" />
         <option value="$PROJECT_DIR$/app/Activity.php" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/ParyerController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/Api/Server/AccessTokenServer.php" />
         <option value="$PROJECT_DIR$/app/Wechat/demo.php" />
@@ -263,6 +262,7 @@
         <option value="$PROJECT_DIR$/app/Api/Controllers/TicketController.php" />
         <option value="$PROJECT_DIR$/app/Wechat/wxBizDataCrypt.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/ParyerController.php" />
       </list>
     </option>
   </component>
@@ -537,21 +537,7 @@
       <workItem from="1520335890620" duration="14909000" />
       <workItem from="1520560359115" duration="3171000" />
       <workItem from="1520691712257" duration="599000" />
-      <workItem from="1520735770987" duration="3387000" />
-    </task>
-    <task id="LOCAL-00126" summary="payer 错误">
-      <created>1519370586062</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1519370586063</updated>
-    </task>
-    <task id="LOCAL-00127" summary="payer 错误">
-      <created>1519373209678</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1519373209678</updated>
+      <workItem from="1520735770987" duration="4593000" />
     </task>
     <task id="LOCAL-00128" summary="修复退票">
       <created>1519373800111</created>
@@ -882,11 +868,25 @@
       <option name="project" value="LOCAL" />
       <updated>1520739083873</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="修复退票">
+      <created>1520739164132</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1520739164132</updated>
+    </task>
+    <task id="LOCAL-00176" summary="修复退票">
+      <created>1520740620397</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1520740620397</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="443708000" />
+    <option name="totallyTimeSpent" value="444914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1254,14 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/ParyerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
@@ -1380,12 +1372,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        <state relative-caret-position="1045">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#6#83#0#PHP" expanded="true" />
             <element signature="e#118#153#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/ParyerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="57" column="89" lean-forward="false" selection-start-line="57" selection-start-column="89" selection-end-line="57" selection-end-column="89" />
+          <folding />
         </state>
       </provider>
     </entry>
