@@ -69,6 +69,7 @@ class UserTokenController extends BaseController
             $errCode = $pc->decryptData($encryptedData, $iv, $data);
 
             if ($errCode == 0) {
+                dd($data);
                 $user->phoneNumber =  $data['phoneNumber'];
                 $user->save();
                 return response()->json(['status' => true, 'phoneNumber' => $data['phoneNumber'],]);
