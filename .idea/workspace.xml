@@ -27,6 +27,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="laravel_dingo_jwt_api" />
+  </component>
   <component name="FileColors">
     <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
     <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
@@ -38,8 +41,8 @@
       <file leaf-file-name="UserTokenController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+            <state relative-caret-position="532">
+              <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
               <folding>
                 <element signature="e#6#83#0#PHP" expanded="true" />
                 <element signature="e#118#153#0#PHP" expanded="true" />
@@ -537,14 +540,7 @@
       <workItem from="1520335890620" duration="14909000" />
       <workItem from="1520560359115" duration="3171000" />
       <workItem from="1520691712257" duration="599000" />
-      <workItem from="1520735770987" duration="5031000" />
-    </task>
-    <task id="LOCAL-00129" summary="修复退票">
-      <created>1519374264363</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1519374264363</updated>
+      <workItem from="1520735770987" duration="5196000" />
     </task>
     <task id="LOCAL-00130" summary="修复退票">
       <created>1519377826467</created>
@@ -882,17 +878,23 @@
       <option name="project" value="LOCAL" />
       <updated>1520741214326</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="修复退票">
+      <created>1520741652700</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1520741652700</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="445352000" />
+    <option name="totallyTimeSpent" value="445517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.4919355" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.49022165" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19088937" sideWeight="0.5298507" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.009061834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -901,7 +903,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27006507" sideWeight="0.46268657" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.5097784" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1380,8 +1382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UserTokenController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+        <state relative-caret-position="532">
+          <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
           <folding>
             <element signature="e#6#83#0#PHP" expanded="true" />
             <element signature="e#118#153#0#PHP" expanded="true" />
