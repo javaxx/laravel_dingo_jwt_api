@@ -38,7 +38,7 @@ class CheckController extends BaseController
              */
 
             $ticket = Ticket::where(['token'=>$token])->first();
-            if ($ticket->id) {
+            if ($ticket) {
                 if (      $ticket->status ==1 ){
                     return ['status'=>false,
                         'message' => '此票已验,检验时间 :'.$ticket->updated_at,
