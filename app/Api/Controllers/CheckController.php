@@ -36,7 +36,9 @@ class CheckController extends BaseController
              *
              *   where(['token'=>$token])->
              */
-           $r =  encrypt($token);
+//            return encrypt('NumberSi0102' );
+            $r =  decrypt($token);
+
             return ['status'=>false,
                 'message' => $r,
             ];
