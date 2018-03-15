@@ -36,13 +36,9 @@ class CheckController extends BaseController
              *
              *   where(['token'=>$token])->
              */
-//            return encrypt('NumberSi0102' );
-            $r =  decrypt($token);
+            $tno = str_after(decrypt($token),'NumberSi0102');
 
-            return ['status'=>false,
-                'message' => $r,
-            ];
-            $ticket = Ticket::where(['token'=>$token])->first();
+            $ticket = Ticket::where(['tno'=>$tno])->first();
             if ($ticket) {
                 if (      $ticket->status ==1 ){
                     return ['status'=>false,
