@@ -36,7 +36,10 @@ class CheckController extends BaseController
              *
              *   where(['token'=>$token])->
              */
-
+           $r =  encrypt($token);
+            return ['status'=>false,
+                'message' => $r,
+            ];
             $ticket = Ticket::where(['token'=>$token])->first();
             if ($ticket) {
                 if (      $ticket->status ==1 ){
