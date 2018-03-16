@@ -26,7 +26,7 @@ class CheckController extends BaseController
     }
     public function checkTicket(Request $request)
     {
-       $user = Auth::user();
+        $user = Auth::user();
         $token = $request->token;
         if ($token) {
             /*
@@ -54,7 +54,7 @@ class CheckController extends BaseController
                 if ($ticket->save()) {
                     return ['status'=>true,
                         'message' => '正确!!!!!!!!!',
-                        'tickets'=>$user->checkedTickets,
+                        'tickets'=> $user->checkedTickets(),
                         'payer'=> $ticket->payers
                         ,];
                 }
