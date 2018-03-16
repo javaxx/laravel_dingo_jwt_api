@@ -7,7 +7,6 @@
     <list id="02ca2728-ac03-4e46-8e9a-ab1a6d84ed42" name="New changelist" comment="New changelist" />
     <list default="true" id="c488df72-e8ae-4c5e-bbd3-d691b28053a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/CheckController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/CheckController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -542,14 +541,7 @@
       <workItem from="1520924567833" duration="113000" />
       <workItem from="1520926980689" duration="1378000" />
       <workItem from="1521109158006" duration="2953000" />
-      <workItem from="1521160583344" duration="610000" />
-    </task>
-    <task id="LOCAL-00147" summary="修复退票">
-      <created>1519459663581</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1519459663582</updated>
+      <workItem from="1521160583344" duration="650000" />
     </task>
     <task id="LOCAL-00148" summary="修复退票">
       <created>1519459740205</created>
@@ -887,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521111956709</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="修复退票">
+      <created>1521161193914</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1521161193915</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470115000" />
+    <option name="totallyTimeSpent" value="470155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
